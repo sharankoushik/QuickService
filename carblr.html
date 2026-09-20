@@ -1,0 +1,991 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QuickService - Carpentry Services Bengaluru</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background-image: url("67c25e80-5fd6-472f-a12e-e9a79c00327e.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.65);
+            z-index: -1;
+        }
+
+        header {
+            background: rgba(17,24,39,0.97);
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            color: #fb923c;
+            font-size: 30px;
+        }
+
+        header p {
+            font-size: 15px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px 35px;
+        }
+
+        .hero h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            color: #d1d5db;
+            font-size: 17px;
+        }
+
+        .location {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            background: rgba(255,255,255,0.96);
+            color: #1f2937;
+            padding: 17px 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .location strong {
+            color: #0d9488;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .providers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.97);
+            color: #1f2937;
+            padding: 23px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            background: #fb923c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+        }
+
+        .profile h3 {
+            font-size: 19px;
+            margin-bottom: 5px;
+        }
+
+        .verified {
+            color: #059669;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .details {
+            line-height: 1.8;
+            color: #4b5563;
+            margin-bottom: 15px;
+        }
+
+        .rating {
+            color: #f97316;
+            font-weight: bold;
+        }
+
+        .price {
+            color: #111827;
+            font-weight: bold;
+        }
+
+        .book-btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: #0d9488;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .book-btn:hover {
+            background: #0f766e;
+        }
+
+        .booked {
+            background: #059669 !important;
+        }
+
+        .success-message {
+            display: none;
+            background: #d1fae5;
+            color: #047857;
+            padding: 12px;
+            margin-top: 12px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .back {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .back a {
+            display: inline-block;
+            background: #fb923c;
+            color: #111827;
+            padding: 12px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back a:hover {
+            background: #f97316;
+        }
+
+        footer {
+            background: rgba(17,24,39,0.97);
+            text-align: center;
+            padding: 25px;
+            color: #d1d5db;
+            margin-top: 30px;
+        }
+
+        @media(max-width:600px) {
+
+            header {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>🪚 QUICKSERVICE</h1>
+        <p>All Home Services At One Stop</p>
+    </header>
+
+
+    <section class="hero">
+
+        <h2>🪚 Carpentry Services in Bengaluru</h2>
+
+        <p>
+            Find trusted carpentry service providers near you
+        </p>
+
+    </section>
+
+
+    <div class="location">
+
+        📍 Location:
+        <strong>Bengaluru, Karnataka</strong>
+
+        &nbsp; | &nbsp;
+
+        🪚 Service:
+        <strong>Carpentry Services</strong>
+
+    </div>
+
+
+    <main class="container">
+
+        <div class="providers">
+
+
+            <!-- 1 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🪚</div>
+                    <div>
+                        <h3>WoodCraft Carpenters</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.9</span> / 5<br>
+                    🕒 8 Years Experience<br>
+                    📍 Whitefield<br>
+                    💰 <span class="price">₹399 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 2 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🔨</div>
+                    <div>
+                        <h3>QuickWood Carpentry</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.8</span> / 5<br>
+                    🕒 7 Years Experience<br>
+                    📍 Indiranagar<br>
+                    💰 <span class="price">₹449 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 3 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🪵</div>
+                    <div>
+                        <h3>Perfect Wood Works</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.7</span> / 5<br>
+                    🕒 6 Years Experience<br>
+                    📍 Electronic City<br>
+                    💰 <span class="price">₹499 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 4 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🔧</div>
+                    <div>
+                        <h3>City Wood Services</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.8</span> / 5<br>
+                    🕒 9 Years Experience<br>
+                    📍 Koramangala<br>
+                    💰 <span class="price">₹599 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 5 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🪚</div>
+                    <div>
+                        <h3>EasyWood Solutions</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.6</span> / 5<br>
+                    🕒 5 Years Experience<br>
+                    📍 BTM Layout<br>
+                    💰 <span class="price">₹349 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 6 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🔨</div>
+                    <div>
+                        <h3>HomeWood Carpenters</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.9</span> / 5<br>
+                    🕒 10 Years Experience<br>
+                    📍 HSR Layout<br>
+                    💰 <span class="price">₹549 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 7 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🪵</div>
+                    <div>
+                        <h3>Smart Wood Works</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.7</span> / 5<br>
+                    🕒 6 Years Experience<br>
+                    📍 Jayanagar<br>
+                    💰 <span class="price">₹399 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 8 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🔧</div>
+                    <div>
+                        <h3>FastFix Carpentry</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.8</span> / 5<br>
+                    🕒 8 Years Experience<br>
+                    📍 Marathahalli<br>
+                    💰 <span class="price">₹449 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 9 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🪚</div>
+                    <div>
+                        <h3>Metro Wood Services</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.6</span> / 5<br>
+                    🕒 5 Years Experience<br>
+                    📍 Yelahanka<br>
+                    💰 <span class="price">₹399 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 10 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🔨</div>
+                    <div>
+                        <h3>Elite Wood Solutions</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.9</span> / 5<br>
+                    🕒 11 Years Experience<br>
+                    📍 JP Nagar<br>
+                    💰 <span class="price">₹699 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 11 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🔧</div>
+                    <div>
+                        <h3>Manoj Carpentry Services</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.7</span> / 5<br>
+                    🕒 7 Years Experience<br>
+                    📍 Banashankari<br>
+                    💰 <span class="price">₹399 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 12 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🪵</div>
+                    <div>
+                        <h3>Star Wood Works</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.8</span> / 5<br>
+                    🕒 9 Years Experience<br>
+                    📍 Rajajinagar<br>
+                    💰 <span class="price">₹449 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 13 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🪚</div>
+                    <div>
+                        <h3>SuperWood Carpenters</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.7</span> / 5<br>
+                    🕒 6 Years Experience<br>
+                    📍 Malleshwaram<br>
+                    💰 <span class="price">₹349 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 14 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🔨</div>
+                    <div>
+                        <h3>Prime Carpentry Services</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.9</span> / 5<br>
+                    🕒 10 Years Experience<br>
+                    📍 Hebbal<br>
+                    💰 <span class="price">₹549 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 15 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🔧</div>
+                    <div>
+                        <h3>Quick Wood Care</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.6</span> / 5<br>
+                    🕒 5 Years Experience<br>
+                    📍 Bellandur<br>
+                    💰 <span class="price">₹349 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 16 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🪵</div>
+                    <div>
+                        <h3>Venu Carpentry Services</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.8</span> / 5<br>
+                    🕒 8 Years Experience<br>
+                    📍 Kalyan Nagar<br>
+                    💰 <span class="price">₹399 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 17 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🪚</div>
+                    <div>
+                        <h3>Hari Wood Works</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.7</span> / 5<br>
+                    🕒 7 Years Experience<br>
+                    📍 JP Nagar<br>
+                    💰 <span class="price">₹399 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 18 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🔨</div>
+                    <div>
+                        <h3>Ravi Carpentry Works</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.8</span> / 5<br>
+                    🕒 9 Years Experience<br>
+                    📍 Frazer Town<br>
+                    💰 <span class="price">₹449 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 19 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🔧</div>
+                    <div>
+                        <h3>City Wood Works</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.6</span> / 5<br>
+                    🕒 5 Years Experience<br>
+                    📍 Basavanagudi<br>
+                    💰 <span class="price">₹349 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 20 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🪵</div>
+                    <div>
+                        <h3>Royal Carpentry Services</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.9</span> / 5<br>
+                    🕒 10 Years Experience<br>
+                    📍 Jayanagar<br>
+                    💰 <span class="price">₹499 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 21 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🪚</div>
+                    <div>
+                        <h3>FastWood Bengaluru</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.7</span> / 5<br>
+                    🕒 6 Years Experience<br>
+                    📍 Sarjapur Road<br>
+                    💰 <span class="price">₹399 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 22 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🔨</div>
+                    <div>
+                        <h3>Vikram Wood Services</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.8</span> / 5<br>
+                    🕒 8 Years Experience<br>
+                    📍 Peenya<br>
+                    💰 <span class="price">₹449 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 23 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🔧</div>
+                    <div>
+                        <h3>FreshWood Carpentry</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.6</span> / 5<br>
+                    🕒 5 Years Experience<br>
+                    📍 Bommanahalli<br>
+                    💰 <span class="price">₹399 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 24 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🪵</div>
+                    <div>
+                        <h3>Elite Wood Bengaluru</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.9</span> / 5<br>
+                    🕒 11 Years Experience<br>
+                    📍 Whitefield<br>
+                    💰 <span class="price">₹599 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 25 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🪚</div>
+                    <div>
+                        <h3>Lokesh Carpentry Services</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.7</span> / 5<br>
+                    🕒 7 Years Experience<br>
+                    📍 Bellandur<br>
+                    💰 <span class="price">₹399 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 26 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🔨</div>
+                    <div>
+                        <h3>Shiva Wood Works</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.8</span> / 5<br>
+                    🕒 9 Years Experience<br>
+                    📍 HSR Layout<br>
+                    💰 <span class="price">₹449 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 27 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🔧</div>
+                    <div>
+                        <h3>Rohit Carpenters</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.7</span> / 5<br>
+                    🕒 6 Years Experience<br>
+                    📍 Electronic City<br>
+                    💰 <span class="price">₹399 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 28 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🪵</div>
+                    <div>
+                        <h3>Praveen Wood Care</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.8</span> / 5<br>
+                    🕒 8 Years Experience<br>
+                    📍 Marathahalli<br>
+                    💰 <span class="price">₹499 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 29 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🪚</div>
+                    <div>
+                        <h3>Raghu Carpentry Services</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.6</span> / 5<br>
+                    🕒 5 Years Experience<br>
+                    📍 Yelahanka<br>
+                    💰 <span class="price">₹349 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+            <!-- 30 -->
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">🔨</div>
+                    <div>
+                        <h3>Harish Wood Solutions</h3>
+                        <span class="verified">✔ Verified Provider</span>
+                    </div>
+                </div>
+
+                <div class="details">
+                    ⭐ <span class="rating">4.9</span> / 5<br>
+                    🕒 10 Years Experience<br>
+                    📍 Koramangala<br>
+                    💰 <span class="price">₹549 onwards</span>
+                </div>
+
+                <button class="book-btn" onclick="book(this)">Book Now</button>
+                <div class="success-message">✅ Successfully Booked!</div>
+            </div>
+
+
+        </div>
+
+
+        <div class="back">
+
+            <a href="serviceblr.html">
+                ← Back to Services
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 <strong>QuickService</strong>.
+            All Rights Reserved.
+        </p>
+
+        <p style="margin-top:10px;">
+            Trusted Carpentry Services in Bengaluru
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        function book(button) {
+
+            const card = button.parentElement;
+
+            const message =
+                card.querySelector(".success-message");
+
+            if (button.classList.contains("booked")) {
+                return;
+            }
+
+            button.innerHTML = "✓ Booked";
+
+            button.classList.add("booked");
+
+            message.style.display = "block";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+```

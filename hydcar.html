@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QuickService - Carpentry Services Hyderabad</title>
+
+    <link rel="icon" type="image/png"
+        href="67c25e80-5fd6-472f-a12e-e9a79c00327e.png">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background-image: url("67c25e80-5fd6-472f-a12e-e9a79c00327e.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.68);
+            z-index: -1;
+        }
+
+        header {
+            background: rgba(17,24,39,0.97);
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            color: #fb923c;
+            font-size: 30px;
+        }
+
+        header p {
+            font-size: 15px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px 35px;
+        }
+
+        .hero h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            color: #d1d5db;
+            font-size: 17px;
+        }
+
+        .location {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            background: rgba(255,255,255,0.96);
+            color: #1f2937;
+            padding: 17px 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .location strong {
+            color: #0d9488;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .providers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.98);
+            color: #1f2937;
+            padding: 23px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            background: #fb923c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            flex-shrink: 0;
+        }
+
+        .profile h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .listed {
+            color: #0d9488;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .verified {
+            color: #059669;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .details {
+            line-height: 1.8;
+            color: #4b5563;
+            margin-bottom: 15px;
+        }
+
+        .rating {
+            color: #f97316;
+            font-weight: bold;
+        }
+
+        .phone {
+            color: #0d9488;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .call-btn,
+        .whatsapp-btn,
+        .book-btn {
+            width: 100%;
+            padding: 11px;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .call-btn {
+            background: #374151;
+        }
+
+        .call-btn:hover {
+            background: #1f2937;
+        }
+
+        .whatsapp-btn {
+            background: #059669;
+        }
+
+        .whatsapp-btn:hover {
+            background: #047857;
+        }
+
+        .book-btn {
+            background: #0d9488;
+            font-size: 16px;
+        }
+
+        .book-btn:hover {
+            background: #0f766e;
+        }
+
+        .booked {
+            background: #059669 !important;
+        }
+
+        .success-message {
+            display: none;
+            background: #d1fae5;
+            color: #047857;
+            padding: 12px;
+            margin-top: 12px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* LOCATION MODAL */
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.75);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            color: #1f2937;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .modal-content p {
+            color: #4b5563;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .close {
+            position: absolute;
+            right: 18px;
+            top: 14px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #4b5563;
+        }
+
+        .provider-selected {
+            background: #f0fdfa;
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            color: #0f766e;
+            font-weight: bold;
+        }
+
+        .location-status {
+            padding: 12px;
+            border-radius: 10px;
+            background: #f3f4f6;
+            margin-bottom: 15px;
+            color: #374151;
+            word-break: break-word;
+        }
+
+        .modal-buttons {
+            display: grid;
+            gap: 10px;
+        }
+
+        .modal-btn {
+            padding: 13px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .get-location {
+            background: #0d9488;
+            color: white;
+        }
+
+        .share-btn {
+            background: #7c3aed;
+            color: white;
+        }
+
+        .whatsapp-location {
+            background: #059669;
+            color: white;
+        }
+
+        .copy-btn {
+            background: #374151;
+            color: white;
+        }
+
+        .maps-btn {
+            background: #f97316;
+            color: #111827;
+        }
+
+        .disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .back {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .back a {
+            display: inline-block;
+            background: #fb923c;
+            color: #111827;
+            padding: 12px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back a:hover {
+            background: #f97316;
+        }
+
+        footer {
+            background: rgba(17,24,39,0.97);
+            text-align: center;
+            padding: 25px;
+            color: #d1d5db;
+            margin-top: 30px;
+        }
+
+        @media(max-width:600px) {
+
+            header {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+
+            .actions {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>🪚 QUICKSERVICE</h1>
+
+    <p>All Home Services At One Stop</p>
+
+</header>
+
+
+<section class="hero">
+
+    <h2>🪚 Carpentry Services in Hyderabad</h2>
+
+    <p>
+        Find local carpentry service providers and contact them directly
+    </p>
+
+</section>
+
+
+<div class="location">
+
+    📍 Location:
+    <strong>Hyderabad, Telangana</strong>
+
+    &nbsp; | &nbsp;
+
+    🪚 Service:
+    <strong>Carpentry Services</strong>
+
+</div>
+
+
+<main class="container">
+
+    <div class="providers" id="providers"></div>
+
+
+    <div class="back">
+
+        <a href="service.html">
+            ← Back to Services
+        </a>
+
+    </div>
+
+</main>
+
+
+<!-- LOCATION MODAL -->
+
+<div class="modal" id="locationModal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeLocationModal()">×</span>
+
+        <h2>📍 Share Your Location</h2>
+
+        <p>
+            Share your location with the selected carpenter so they can
+            find your service address.
+        </p>
+
+        <div class="provider-selected" id="selectedProvider">
+            Provider
+        </div>
+
+        <div class="location-status" id="locationStatus">
+            📍 Your location has not been detected yet.
+        </div>
+
+        <div class="modal-buttons">
+
+            <button
+                class="modal-btn get-location"
+                onclick="getLocation()">
+                📍 Get My Current Location
+            </button>
+
+            <button
+                class="modal-btn share-btn disabled"
+                id="shareButton"
+                onclick="shareLocation()">
+                📤 Share Location
+            </button>
+
+            <button
+                class="modal-btn whatsapp-location disabled"
+                id="whatsappLocationButton"
+                onclick="shareOnWhatsApp()">
+                💬 Share on WhatsApp
+            </button>
+
+            <button
+                class="modal-btn copy-btn disabled"
+                id="copyButton"
+                onclick="copyLocation()">
+                📋 Copy Location Link
+            </button>
+
+            <button
+                class="modal-btn maps-btn disabled"
+                id="mapsButton"
+                onclick="openMaps()">
+                🗺️ Open Location in Google Maps
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <p>
+        © 2026 <strong>QuickService</strong>.
+        All Rights Reserved.
+    </p>
+
+    <p style="margin-top:10px;">
+        Carpentry Services in Hyderabad
+    </p>
+
+</footer>
+
+
+<script>
+
+/*
+=========================================================
+PUBLIC HYDERABAD CARPENTRY BUSINESS LISTINGS
+=========================================================
+
+Names, locations and publicly displayed contact numbers
+are based on current public business-directory/web listings.
+
+Always recheck contact information before deploying
+the website commercially.
+*/
+
+const providers = [
+
+    {
+        name: "PEC Services",
+        phone: "8197401276",
+        area: "Parsigahtta / Sanjeevpuram",
+        rating: "3.8",
+        reviews: "1234",
+        avatar: "🪚",
+        verified: true
+    },
+
+    {
+        name: "Madhav Chary Carpentry Contractors",
+        phone: "8792483825",
+        area: "Borabanda",
+        rating: "4.8",
+        reviews: "256",
+        avatar: "🔨"
+    },
+
+    {
+        name: "Nav Decoration Furniture",
+        phone: "8197134452",
+        area: "Erragadda",
+        rating: "3.8",
+        reviews: "274",
+        avatar: "🪑",
+        verified: true
+    },
+
+    {
+        name: "Eshwar Sri Interiors",
+        phone: "8050657287",
+        area: "Kukatpally",
+        rating: "4.7",
+        reviews: "170",
+        avatar: "🛠️"
+    },
+
+    {
+        name: "Unique Carpenter",
+        phone: "8197432610",
+        area: "Puppalaguda / Manikonda",
+        rating: "4.5",
+        reviews: "169",
+        avatar: "🪚"
+    },
+
+    {
+        name: "Shyam Interiors",
+        phone: "8792897380",
+        area: "Kothapet",
+        rating: "4.6",
+        reviews: "143",
+        avatar: "🏠"
+    },
+
+    {
+        name: "P K Sharma Carpenter Contractors",
+        phone: "8460238314",
+        area: "Langar House",
+        rating: "4.5",
+        reviews: "116",
+        avatar: "🔨"
+    },
+
+    {
+        name: "Sri Veera Bhadra Interiors",
+        phone: "9740115893",
+        area: "Kukatpally",
+        rating: "4.5",
+        reviews: "113",
+        avatar: "🪑"
+    },
+
+    {
+        name: "Handyman Home Services",
+        phone: "7490029534",
+        area: "ECIL X Road",
+        rating: "4.3",
+        reviews: "107",
+        avatar: "🛠️"
+    },
+
+    {
+        name: "Vishwakrma Interior Designer",
+        phone: "9035033672",
+        area: "Jagadgiri Gutta",
+        rating: "4.7",
+        reviews: "92",
+        avatar: "🪚",
+        verified: true
+    },
+
+    {
+        name: "Imran Pasha Wood Work",
+        phone: "7405356919",
+        area: "Manikonda",
+        rating: "4.6",
+        reviews: "89",
+        avatar: "🪵"
+    },
+
+    {
+        name: "Meenakshi Interior's",
+        phone: "8460400631",
+        area: "ECIL / Kushaiguda",
+        rating: "4.5",
+        reviews: "90",
+        avatar: "🪑",
+        verified: true
+    },
+
+    {
+        name: "Sri Vijaya Lakshmi Interiors & Wardrobes",
+        phone: "8867918805",
+        area: "Balapur",
+        rating: "4.1",
+        reviews: "86",
+        avatar: "🚪",
+        verified: true
+    },
+
+    {
+        name: "Umamaheshwara Enterprises",
+        phone: "8460230407",
+        area: "Manikonda / Chengicherla",
+        rating: "4.4",
+        reviews: "79",
+        avatar: "🛠️",
+        verified: true
+    },
+
+    {
+        name: "Sri Sai Wood Works",
+        phone: "9740116772",
+        area: "Hayath Nagar",
+        rating: "4.9",
+        reviews: "58",
+        avatar: "🪵"
+    },
+
+    {
+        name: "Satya Big Interior Designers",
+        phone: "8792914762",
+        area: "Nagole / Karmanghat",
+        rating: "4.3",
+        reviews: "63",
+        avatar: "🪚",
+        verified: true
+    },
+
+    {
+        name: "Rudra Interiors",
+        phone: "7041433084",
+        area: "KPHB Colony / Kukatpally",
+        rating: "5.0",
+        reviews: "53",
+        avatar: "🔨"
+    },
+
+    {
+        name: "Manikonda Interior Works",
+        phone: "8460202643",
+        area: "Puppalaguda / Manikonda",
+        rating: "4.7",
+        reviews: "54",
+        avatar: "🏠"
+    },
+
+    {
+        name: "Sai Balaji Interior & Wood Works",
+        phone: "7022207167",
+        area: "New Nallakunta",
+        rating: "4.6",
+        reviews: "54",
+        avatar: "🪵"
+    },
+
+    {
+        name: "Abh Carpenter",
+        phone: "9980765063",
+        area: "Attapur",
+        rating: "4.7",
+        reviews: "52",
+        avatar: "🪚",
+        verified: true
+    },
+
+    {
+        name: "SLS Woodworks",
+        phone: "7048577063",
+        area: "Miyapur",
+        rating: "4.3",
+        reviews: "56",
+        avatar: "🔨",
+        verified: true
+    },
+
+    {
+        name: "Nagabhushanam",
+        phone: "7041618526",
+        area: "Lower Tank Bund",
+        rating: "3.7",
+        reviews: "63",
+        avatar: "🪑"
+    },
+
+    {
+        name: "Zainab Furniture",
+        phone: "8733990917",
+        area: "Toli Chowki",
+        rating: "4.6",
+        reviews: "49",
+        avatar: "🛋️"
+    },
+
+    {
+        name: "Prem Kumar Interiors",
+        phone: "8123175826",
+        area: "KPHB Colony",
+        rating: "4.2",
+        reviews: "52",
+        avatar: "🪚",
+        verified: true
+    },
+
+    {
+        name: "Naaz Furniture Works",
+        phone: "6366433352",
+        area: "Kondapur / Hafeezpet",
+        rating: "4.4",
+        reviews: "48",
+        avatar: "🪑",
+        verified: true
+    },
+
+    {
+        name: "Rite Solutions Choice Services",
+        phone: "8460565413",
+        area: "Gachibowli",
+        rating: "4.0",
+        reviews: "51",
+        avatar: "🛠️",
+        verified: true
+    },
+
+    {
+        name: "Rama Raju Carpenter & Cupboard Works",
+        phone: "9054833776",
+        area: "Ameerpet",
+        rating: "4.6",
+        reviews: "44",
+        avatar: "🚪"
+    },
+
+    {
+        name: "Al Madina Classic Furniture",
+        phone: "7383533257",
+        area: "Ziaguda",
+        rating: "4.6",
+        reviews: "44",
+        avatar: "🪑"
+    },
+
+    {
+        name: "NVSS Interior Wood Works",
+        phone: "8511040064",
+        area: "Manikonda",
+        rating: "4.7",
+        reviews: "43",
+        avatar: "🪵"
+    },
+
+    {
+        name: "Rudra Interiors & Decorators",
+        phone: "8485919287",
+        area: "Gurram Guda",
+        rating: "4.4",
+        reviews: "45",
+        avatar: "🏠"
+    },
+
+    {
+        name: "Ganesh Interior",
+        phone: "7383609754",
+        area: "Bowenpally",
+        rating: "4.3",
+        reviews: "45",
+        avatar: "🪚"
+    }
+
+];
+
+
+const providersContainer =
+    document.getElementById("providers");
+
+
+/*
+=========================================================
+DISPLAY PROVIDERS
+=========================================================
+*/
+
+providers.forEach((provider, index) => {
+
+    const card = document.createElement("div");
+
+    card.className = "card";
+
+    const verifiedText = provider.verified
+        ? `<span class="verified">✔ Directory Verified</span>`
+        : `<span class="listed">● Public Business Listing</span>`;
+
+    card.innerHTML = `
+
+        <div class="profile">
+
+            <div class="avatar">
+                ${provider.avatar}
+            </div>
+
+            <div>
+
+                <h3>${provider.name}</h3>
+
+                ${verifiedText}
+
+            </div>
+
+        </div>
+
+
+        <div class="details">
+
+            ⭐
+            <span class="rating">
+                ${provider.rating}
+            </span>
+            / 5
+
+            (${provider.reviews} reviews)
+
+            <br>
+
+            📍 ${provider.area}
+
+            <br>
+
+            📞
+
+            <a
+                class="phone"
+                href="tel:+91${provider.phone}">
+                +91 ${provider.phone}
+            </a>
+
+            <br>
+
+            🪚 Furniture repair, doors, cupboards & woodwork
+
+        </div>
+
+
+        <div class="actions">
+
+            <a
+                class="call-btn"
+                href="tel:+91${provider.phone}">
+                📞 Call
+            </a>
+
+            <a
+                class="whatsapp-btn"
+                href="https://wa.me/91${provider.phone}"
+                target="_blank">
+                💬 WhatsApp
+            </a>
+
+        </div>
+
+
+        <button
+            class="book-btn"
+            onclick="bookProvider(${index}, this)">
+            📅 Book Now
+        </button>
+
+
+        <div class="success-message">
+            ✅ Booking request started!
+        </div>
+
+    `;
+
+    providersContainer.appendChild(card);
+
+});
+
+
+/*
+=========================================================
+BOOKING
+=========================================================
+*/
+
+let selectedProvider = null;
+let currentLocationLink = "";
+
+
+function bookProvider(index, button) {
+
+    selectedProvider = providers[index];
+
+    document.getElementById("selectedProvider").innerHTML =
+        `🪚 Booking with: ${selectedProvider.name}
+        <br>
+         📞 +91 ${selectedProvider.phone}`;
+
+    document.getElementById("locationStatus").innerHTML =
+        "📍 Your location has not been detected yet.";
+
+    currentLocationLink = "";
+
+    disableLocationButtons();
+
+    document.getElementById("locationModal").style.display = "flex";
+
+
+    button.innerHTML = "✓ Booking Started";
+
+    button.classList.add("booked");
+
+    const message =
+        button.parentElement.querySelector(".success-message");
+
+    message.style.display = "block";
+
+}
+
+
+/*
+=========================================================
+CLOSE MODAL
+=========================================================
+*/
+
+function closeLocationModal() {
+
+    document.getElementById("locationModal").style.display = "none";
+
+}
+
+
+/*
+=========================================================
+GET USER LOCATION
+=========================================================
+*/
+
+function getLocation() {
+
+    const status =
+        document.getElementById("locationStatus");
+
+    if (!navigator.geolocation) {
+
+        status.innerHTML =
+            "❌ Location services are not supported by this browser.";
+
+        return;
+
+    }
+
+
+    status.innerHTML =
+        "⏳ Getting your current location...";
+
+
+    navigator.geolocation.getCurrentPosition(
+
+        function(position) {
+
+            const latitude =
+                position.coords.latitude;
+
+            const longitude =
+                position.coords.longitude;
+
+
+            currentLocationLink =
+                `https://www.google.com/maps?q=${latitude},${longitude}`;
+
+
+            status.innerHTML = `
+
+                ✅ Location detected!
+
+                <br><br>
+
+                Latitude:
+                ${latitude.toFixed(6)}
+
+                <br>
+
+                Longitude:
+                ${longitude.toFixed(6)}
+
+            `;
+
+
+            enableLocationButtons();
+
+        },
+
+
+        function(error) {
+
+            if (error.code === 1) {
+
+                status.innerHTML =
+                    "❌ Location permission was denied. Please allow location access in your browser.";
+
+            }
+
+            else if (error.code === 2) {
+
+                status.innerHTML =
+                    "❌ Your location could not be determined.";
+
+            }
+
+            else {
+
+                status.innerHTML =
+                    "❌ Unable to get your location. Please try again.";
+
+            }
+
+        },
+
+        {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
+        }
+
+    );
+
+}
+
+
+/*
+=========================================================
+ENABLE LOCATION BUTTONS
+=========================================================
+*/
+
+function enableLocationButtons() {
+
+    document
+        .getElementById("shareButton")
+        .classList.remove("disabled");
+
+    document
+        .getElementById("whatsappLocationButton")
+        .classList.remove("disabled");
+
+    document
+        .getElementById("copyButton")
+        .classList.remove("disabled");
+
+    document
+        .getElementById("mapsButton")
+        .classList.remove("disabled");
+
+}
+
+
+/*
+=========================================================
+DISABLE LOCATION BUTTONS
+=========================================================
+*/
+
+function disableLocationButtons() {
+
+    document
+        .getElementById("shareButton")
+        .classList.add("disabled");
+
+    document
+        .getElementById("whatsappLocationButton")
+        .classList.add("disabled");
+
+    document
+        .getElementById("copyButton")
+        .classList.add("disabled");
+
+    document
+        .getElementById("mapsButton")
+        .classList.add("disabled");
+
+}
+
+
+/*
+=========================================================
+SHARE USING PHONE / BROWSER SHARE MENU
+=========================================================
+*/
+
+async function shareLocation() {
+
+    if (!currentLocationLink) {
+
+        alert("Please get your current location first.");
+
+        return;
+
+    }
+
+
+    const message =
+        `Hello ${selectedProvider.name},
+
+I have booked your carpentry service through QuickService.
+
+📍 My service location:
+${currentLocationLink}
+
+Please use this location to reach me.`;
+
+
+    if (navigator.share) {
+
+        try {
+
+            await navigator.share({
+
+                title: "QuickService Booking Location",
+
+                text: message,
+
+                url: currentLocationLink
+
+            });
+
+        }
+
+        catch (error) {
+
+            console.log("Share cancelled.");
+
+        }
+
+    }
+
+    else {
+
+        await copyLocation();
+
+        alert(
+            "Your browser does not support direct sharing. The location link has been copied. You can paste it into WhatsApp or another messaging app."
+        );
+
+    }
+
+}
+
+
+/*
+=========================================================
+WHATSAPP
+=========================================================
+*/
+
+function shareOnWhatsApp() {
+
+    if (!currentLocationLink) {
+
+        alert("Please get your current location first.");
+
+        return;
+
+    }
+
+
+    const message =
+        `Hello ${selectedProvider.name},
+
+I booked your carpentry service through QuickService.
+
+📍 My service location:
+${currentLocationLink}
+
+Please use this location to reach me.
+
+Thank you.`;
+
+
+    const whatsappURL =
+        "https://wa.me/91" +
+        selectedProvider.phone +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+}
+
+
+/*
+=========================================================
+COPY LOCATION
+=========================================================
+*/
+
+async function copyLocation() {
+
+    if (!currentLocationLink) {
+
+        alert("Please get your current location first.");
+
+        return;
+
+    }
+
+
+    try {
+
+        await navigator.clipboard.writeText(
+            currentLocationLink
+        );
+
+        alert(
+            "📋 Location link copied successfully!"
+        );
+
+    }
+
+    catch (error) {
+
+        alert(
+            "Unable to copy automatically. Please copy the location from the screen."
+        );
+
+    }
+
+}
+
+
+/*
+=========================================================
+OPEN GOOGLE MAPS
+=========================================================
+*/
+
+function openMaps() {
+
+    if (!currentLocationLink) {
+
+        alert("Please get your current location first.");
+
+        return;
+
+    }
+
+
+    window.open(
+        currentLocationLink,
+        "_blank"
+    );
+
+}
+
+
+/*
+=========================================================
+CLICK OUTSIDE MODAL TO CLOSE
+=========================================================
+*/
+
+window.addEventListener(
+    "click",
+    function(event) {
+
+        const modal =
+            document.getElementById("locationModal");
+
+        if (event.target === modal) {
+
+            closeLocationModal();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

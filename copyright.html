@@ -1,0 +1,571 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QuickService - Copyright Notice</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+        }
+
+        body {
+
+            min-height: 100vh;
+
+            background-image:
+                url("67c25e80-5fd6-472f-a12e-e9a79c00327e.png");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            color: white;
+        }
+
+
+        /* DARK OVERLAY */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(0,0,0,0.68);
+
+            z-index: -1;
+        }
+
+
+        /* HEADER */
+
+        header {
+
+            background: rgba(17,24,39,0.97);
+
+            padding: 20px 7%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 10;
+        }
+
+
+        header h1 {
+
+            color: #fb923c;
+
+            font-size: 30px;
+        }
+
+
+        header p {
+
+            font-size: 15px;
+        }
+
+
+        /* MAIN */
+
+        .container {
+
+            width: 90%;
+
+            max-width: 1000px;
+
+            margin: 50px auto;
+        }
+
+
+        /* COPYRIGHT CARD */
+
+        .copyright-card {
+
+            background: rgba(255,255,255,0.97);
+
+            color: #1f2937;
+
+            padding: 40px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 8px 30px rgba(0,0,0,0.4);
+        }
+
+
+        .copyright-card h1 {
+
+            text-align: center;
+
+            color: #111827;
+
+            margin-bottom: 15px;
+        }
+
+
+        .copyright-year {
+
+            text-align: center;
+
+            color: #0d9488;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* SECTIONS */
+
+        .section {
+
+            margin-bottom: 28px;
+
+            padding-bottom: 22px;
+
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+
+        .section:last-child {
+
+            border-bottom: none;
+
+            margin-bottom: 0;
+        }
+
+
+        .section h2 {
+
+            color: #111827;
+
+            font-size: 21px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .section p {
+
+            color: #4b5563;
+
+            line-height: 1.7;
+
+            font-size: 15.5px;
+        }
+
+
+        /* HIGHLIGHT */
+
+        .highlight {
+
+            background: #f0fdfa;
+
+            border-left: 5px solid #0d9488;
+
+            padding: 18px;
+
+            border-radius: 10px;
+
+            margin-bottom: 28px;
+
+            line-height: 1.7;
+
+            color: #374151;
+        }
+
+
+        /* BACK BUTTON */
+
+        .back {
+
+            text-align: center;
+
+            margin-top: 30px;
+        }
+
+
+        .back a {
+
+            display: inline-block;
+
+            background: #0d9488;
+
+            color: white;
+
+            padding: 12px 28px;
+
+            border-radius: 10px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+
+        .back a:hover {
+
+            background: #0f766e;
+        }
+
+
+        /* ABOUT */
+
+        .about {
+
+            text-align: center;
+
+            margin: 30px 0;
+        }
+
+
+        .about a {
+
+            color: #fb923c;
+
+            font-weight: bold;
+
+            text-decoration: none;
+        }
+
+
+        .about a:hover {
+
+            text-decoration: underline;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+
+            background: rgba(17,24,39,0.97);
+
+            text-align: center;
+
+            padding: 25px;
+
+            color: #d1d5db;
+
+            margin-top: 40px;
+        }
+
+
+        footer a {
+
+            color: #fb923c;
+
+            text-decoration: none;
+        }
+
+
+        /* MOBILE */
+
+        @media(max-width:600px) {
+
+            header {
+
+                flex-direction: column;
+
+                gap: 8px;
+
+                text-align: center;
+            }
+
+
+            header h1 {
+
+                font-size: 25px;
+            }
+
+
+            .copyright-card {
+
+                padding: 25px;
+            }
+
+
+            .copyright-card h1 {
+
+                font-size: 26px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>⚡ QUICKSERVICE</h1>
+
+        <p>All Home Services At One Stop</p>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="container">
+
+
+        <div class="copyright-card">
+
+
+            <h1>© Copyright Notice</h1>
+
+
+            <div class="copyright-year">
+
+                © 2026 QuickService — All Rights Reserved.
+
+            </div>
+
+
+            <!-- INTRODUCTION -->
+
+            <div class="highlight">
+
+                All content and materials available on the
+                <strong>QuickService</strong> website, including
+                website design, layout, text, graphics, logos,
+                icons, images, service descriptions, and other
+                digital materials, are protected by applicable
+                copyright and intellectual property laws.
+
+            </div>
+
+
+            <!-- OWNERSHIP -->
+
+            <div class="section">
+
+                <h2>🔒 Website Content & Branding</h2>
+
+                <p>
+
+                    The QuickService name, logo, branding, and
+                    original website content may not be copied,
+                    reproduced, republished, modified, distributed,
+                    or used for commercial purposes without
+                    prior written permission.
+
+                </p>
+
+            </div>
+
+
+            <!-- USER CONTENT -->
+
+            <div class="section">
+
+                <h2>👤 User Content</h2>
+
+                <p>
+
+                    Users and service providers may submit
+                    information such as profiles, reviews,
+                    ratings, descriptions, and images.
+
+                    By submitting content, users are responsible
+                    for ensuring that they have the necessary
+                    rights to share it and that it does not
+                    violate applicable laws or the rights of
+                    others.
+
+                </p>
+
+            </div>
+
+
+            <!-- PROVIDER -->
+
+            <div class="section">
+
+                <h2>👨‍🔧 Service Provider Disclaimer</h2>
+
+                <p>
+
+                    QuickService acts as a platform connecting
+                    customers with local service providers.
+                    The actual services are performed by
+                    independent service providers.
+
+                    Users should review provider information,
+                    ratings, and reviews before booking a service.
+
+                </p>
+
+            </div>
+
+
+            <!-- THIRD PARTY -->
+
+            <div class="section">
+
+                <h2>🌐 Third-Party Content</h2>
+
+                <p>
+
+                    Some information, images, logos, or links
+                    displayed on the website may belong to
+                    third parties.
+
+                    Such materials remain the property of their
+                    respective owners and are used only where
+                    permitted.
+
+                </p>
+
+            </div>
+
+
+            <!-- WEBSITE USE -->
+
+            <div class="section">
+
+                <h2>🛡️ Website Use</h2>
+
+                <p>
+
+                    Users must not misuse the website, attempt
+                    unauthorized access, copy website data through
+                    automated methods, interfere with website
+                    operations, or use the platform for unlawful
+                    purposes.
+
+                </p>
+
+            </div>
+
+
+            <!-- CHANGES -->
+
+            <div class="section">
+
+                <h2>🔄 Changes to Content</h2>
+
+                <p>
+
+                    QuickService reserves the right to update,
+                    modify, or remove website content, services,
+                    features, or policies at any time without
+                    prior notice.
+
+                </p>
+
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <div class="section">
+
+                <h2>📩 Contact</h2>
+
+                <p>
+
+                    For copyright concerns, content-related
+                    questions, or permission requests, users
+                    can contact the QuickService administration
+                    through the contact information provided
+                    on the website.
+
+                </p>
+
+            </div>
+
+
+            <!-- BACK -->
+
+            <div class="back">
+
+                <a href="op.html">
+                    ← Back to QuickService
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- ABOUT -->
+
+        <div class="about">
+
+            <h3>
+
+                ℹ️ Know more
+
+                <a href="more.html">
+                    About Us
+                </a>
+
+            </h3>
+
+        </div>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+
+            © 2026 <strong>QuickService</strong>.
+            All Rights Reserved.
+
+        </p>
+
+        <p style="margin-top:10px;">
+
+            <a href="more.html">
+                About QuickService
+            </a>
+
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+```

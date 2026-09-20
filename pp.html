@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QuickService - Login</title>
+    <link rel="icon" type="image/png" href="67c25e80-5fd6-472f-a12e-e9a79c00327e.png">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background-image: url("67c25e80-5fd6-472f-a12e-e9a79c00327e.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        /* Dark overlay */
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.65);
+            z-index: -1;
+        }
+
+
+        /* HEADER */
+
+        header {
+            background: rgba(17,24,39,0.97);
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #fb923c;
+            font-size: 30px;
+        }
+
+        header p {
+            font-size: 15px;
+        }
+
+
+        /* WELCOME */
+
+        .welcome {
+            text-align: center;
+            padding: 45px 20px 20px;
+        }
+
+        .welcome h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .welcome p {
+            color: #d1d5db;
+            font-size: 17px;
+        }
+
+
+        /* LOGIN CONTAINER */
+
+        .login-container {
+            width: 90%;
+            max-width: 450px;
+            margin: 25px auto 40px;
+        }
+
+        .login-box {
+            background: rgba(255,255,255,0.97);
+            color: #1f2937;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+        }
+
+        .login-box h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .login-box .subtitle {
+            text-align: center;
+            color: #6b7280;
+            margin-bottom: 28px;
+        }
+
+
+        /* INPUTS */
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .input-group input:focus {
+            border-color: #0d9488;
+        }
+
+        .input-group input:disabled {
+            background: #f3f4f6;
+            cursor: not-allowed;
+        }
+
+
+        /* FORGOT PASSWORD */
+
+        .forgot-link {
+            display: block;
+            text-align: right;
+            color: #0d9488;
+            text-decoration: none;
+            margin-bottom: 22px;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+
+        /* LOGIN BUTTON */
+
+        .login-btn {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 10px;
+            background: #0d9488;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .login-btn:hover {
+            background: #0f766e;
+            transform: translateY(-2px);
+        }
+
+        .login-btn:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+
+        /* MESSAGE */
+
+        #message {
+            display: none;
+            text-align: center;
+            margin-top: 18px;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+
+        .success { background: #d1fae5; color: #047857; }
+        .error { background: #fee2e2; color: #b91c1c; }
+
+
+        /* SIGN UP */
+
+        .signup-text {
+            text-align: center;
+            margin-top: 22px;
+            color: #4b5563;
+        }
+
+        .signup-text a {
+            color: #0d9488;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+
+        /* ABOUT */
+
+        .about {
+            width: 90%;
+            max-width: 450px;
+            margin: auto;
+            text-align: center;
+            color: white;
+        }
+
+        .about a {
+            color: #fb923c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            margin-top: 45px;
+            background: rgba(17,24,39,0.97);
+            padding: 25px;
+            text-align: center;
+            color: #d1d5db;
+        }
+
+        footer a {
+            color: #fb923c;
+            text-decoration: none;
+        }
+
+
+        /* MOBILE */
+
+        @media(max-width:600px) {
+
+            header {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            .welcome h2 {
+                font-size: 27px;
+            }
+
+            .login-box {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>⚡ QUICKSERVICE</h1>
+
+        <p>All Home Services At One Stop</p>
+
+    </header>
+
+
+    <!-- WELCOME -->
+
+    <section class="welcome">
+
+        <h2>👋 Welcome to QuickService</h2>
+
+        <p>
+            Login to find trusted local service providers.
+        </p>
+
+    </section>
+
+
+    <!-- LOGIN -->
+
+    <div class="login-container">
+
+        <div class="login-box">
+
+            <h1>🔐 Login</h1>
+
+            <p class="subtitle">
+                Access your QuickService account
+            </p>
+
+
+            <form id="loginForm">
+
+
+                <!-- EMAIL -->
+
+                <div class="input-group">
+
+                    <label for="email">
+                        📧 Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="input-group">
+
+                    <label for="password">
+                        🔒 Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- FORGOT -->
+
+                <a href="forget password.html" class="forgot-link">
+                    Forgot Password?
+                </a>
+
+
+                <!-- LOGIN -->
+
+                <button type="submit" id="loginBtn" class="login-btn">
+                    Login →
+                </button>
+
+
+            </form>
+
+            <div id="message"></div>
+
+
+            <!-- CREATE ACCOUNT -->
+
+            <p class="signup-text">
+
+                Don't have an account?
+
+                <a href="ceate.html">
+                    Create Account
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ABOUT -->
+
+    <div class="about">
+
+        <h3>
+            ℹ️ Know more
+            <a href="more.html">
+                About Us
+            </a>
+        </h3>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 <strong>QuickService</strong>.
+            All Rights Reserved.
+        </p>
+
+        <p style="margin-top:10px;">
+
+            Know more about our
+            <a href="copyright.html">
+                Copyright Policy
+            </a>
+
+        </p>
+
+    </footer>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+        import {
+            getAuth,
+            signInWithEmailAndPassword
+        } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+        /* Same Firebase project used on the Create Account page, so only
+           accounts actually created there will be able to log in here. */
+        const firebaseConfig = {
+            apiKey: "AIzaSyDn15soeEJeuYfEvQyvzK-MKWZCuhgGx9g",
+            authDomain: "quickservice-da485.firebaseapp.com",
+            projectId: "quickservice-da485",
+            storageBucket: "quickservice-da485.firebasestorage.app",
+            messagingSenderId: "348321079075",
+            appId: "1:348321079075:web:561fb3f738cb40023db696",
+            measurementId: "G-Z7LXSELJK2"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        const form = document.getElementById("loginForm");
+        const emailInput = document.getElementById("email");
+        const passwordInput = document.getElementById("password");
+        const loginBtn = document.getElementById("loginBtn");
+        const message = document.getElementById("message");
+
+        function showMessage(text, type) {
+            message.textContent = text;
+            message.className = type;
+            message.style.display = "block";
+        }
+
+        function hideMessage() {
+            message.style.display = "none";
+        }
+
+        function setBusy(busy) {
+            loginBtn.disabled = busy;
+            emailInput.disabled = busy;
+            passwordInput.disabled = busy;
+            loginBtn.textContent = busy ? "Logging in..." : "Login →";
+        }
+
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            hideMessage();
+
+            const email = emailInput.value.trim();
+            const password = passwordInput.value;
+
+            if (!email || !password) {
+                showMessage("❌ Please enter both email and password.", "error");
+                return;
+            }
+
+            try {
+                setBusy(true);
+
+                const result = await signInWithEmailAndPassword(auth, email, password);
+                const user = result.user;
+
+                showMessage("✅ Login successful! Redirecting...", "success");
+
+                // Store a light session marker for op.html to read if needed.
+                sessionStorage.setItem("quickserviceUserEmail", user.email);
+                sessionStorage.setItem("quickserviceUserUid", user.uid);
+
+                setTimeout(() => {
+                    window.location.href = "op.html";
+                }, 1200);
+
+            } catch (error) {
+                console.error(error);
+
+                let text = "Login failed. Please try again.";
+
+                // Firebase groups "no such user" and "wrong password" under
+                // auth/invalid-credential in newer SDK versions, and reports
+                // them separately as auth/user-not-found / auth/wrong-password
+                // in older ones — handle both so unknown accounts show clearly.
+                if (
+                    error.code === "auth/user-not-found" ||
+                    error.code === "auth/invalid-credential" ||
+                    error.code === "auth/invalid-email"
+                ) {
+                    text = "No account exists with this email. Please create an account first.";
+                } else if (error.code === "auth/wrong-password") {
+                    text = "Incorrect password. Please try again.";
+                } else if (error.code === "auth/too-many-requests") {
+                    text = "Too many failed attempts. Please wait and try again later.";
+                } else if (error.code === "auth/user-disabled") {
+                    text = "This account has been disabled.";
+                } else if (error.message) {
+                    text = error.message;
+                }
+
+                showMessage("❌ " + text, "error");
+            } finally {
+                setBusy(false);
+            }
+        });
+    </script>
+
+</body>
+
+</html>

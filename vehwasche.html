@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QuickService - Vehicle Washing Services Chennai</title>
+<link rel="icon" type="image/png" href="67c25e80-5fd6-472f-a12e-e9a79c00327e.png">
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background-image: url("67c25e80-5fd6-472f-a12e-e9a79c00327e.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.65);
+            z-index: -1;
+        }
+
+        header {
+            background: rgba(17,24,39,0.97);
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            color: #fb923c;
+            font-size: 30px;
+        }
+
+        header p {
+            font-size: 15px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px 35px;
+        }
+
+        .hero h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            color: #d1d5db;
+            font-size: 17px;
+        }
+
+        .location {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            background: rgba(255,255,255,0.96);
+            color: #1f2937;
+            padding: 17px 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .location strong {
+            color: #0d9488;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .providers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.97);
+            color: #1f2937;
+            padding: 23px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            background: #fb923c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            flex-shrink: 0;
+        }
+
+        .profile h3 {
+            font-size: 19px;
+            margin-bottom: 5px;
+        }
+
+        .verified {
+            color: #059669;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .details {
+            line-height: 1.8;
+            color: #4b5563;
+            margin-bottom: 15px;
+        }
+
+        .rating {
+            color: #f97316;
+            font-weight: bold;
+        }
+
+        .price {
+            color: #111827;
+            font-weight: bold;
+        }
+
+        .book-btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: #0d9488;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .book-btn:hover {
+            background: #0f766e;
+        }
+
+        .booked {
+            background: #059669 !important;
+        }
+
+        .success-message {
+            display: none;
+            background: #d1fae5;
+            color: #047857;
+            padding: 12px;
+            margin-top: 12px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .back {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .back a {
+            display: inline-block;
+            background: #fb923c;
+            color: #111827;
+            padding: 12px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back a:hover {
+            background: #f97316;
+        }
+
+        footer {
+            background: rgba(17,24,39,0.97);
+            text-align: center;
+            padding: 25px;
+            color: #d1d5db;
+            margin-top: 30px;
+        }
+
+        @media(max-width:600px) {
+
+            header {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <h1>🚗 QUICKSERVICE</h1>
+
+    <p>All Home Services At One Stop</p>
+
+</header>
+
+
+<section class="hero">
+
+    <h2>🚗 Vehicle Washing Services in Chennai</h2>
+
+    <p>
+        Find trusted professionals for car washing, bike washing and vehicle detailing
+    </p>
+
+</section>
+
+
+<div class="location">
+
+    📍 Location:
+    <strong>Chennai, Tamil Nadu</strong>
+
+    &nbsp; | &nbsp;
+
+    🚗 Service:
+    <strong>Vehicle Washing</strong>
+
+</div>
+
+
+<main class="container">
+
+<div class="providers">
+
+
+<!-- 1 -->
+<div class="card">
+
+    <div class="profile">
+
+        <div class="avatar">🚗</div>
+
+        <div>
+
+            <h3>Car Washify</h3>
+
+            <span class="verified">
+                ✔ Chennai Provider
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="details">
+
+        ⭐ <span class="rating">4.8</span> / 5<br>
+
+        🚗 Doorstep Car Wash<br>
+
+        📍 Chennai<br>
+
+        🧼 Basic Exterior Wash<br>
+
+        💦 Express Wash<br>
+
+        ✨ Classic Wash<br>
+
+        🧽 Interior Detailing<br>
+
+        💰 <span class="price">From ₹500</span>
+
+    </div>
+
+    <button class="book-btn" onclick="book(this)">
+        Book Now
+    </button>
+
+    <div class="success-message">
+        ✅ Successfully Booked!
+    </div>
+
+</div>
+
+
+<!-- 2 -->
+<div class="card">
+
+    <div class="profile">
+
+        <div class="avatar">🧽</div>
+
+        <div>
+
+            <h3>SpotShine Car Care</h3>
+
+            <span class="verified">
+                ✔ Chennai Provider
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="details">
+
+        ⭐ <span class="rating">4.8</span> / 5<br>
+
+        🚗 Doorstep Car Cleaning<br>
+
+        📍 Chennai<br>
+
+        💧 Waterless Dry Wash<br>
+
+        🫧 Pressure Wash + Foam<br>
+
+        🧹 Interior Vacuum<br>
+
+        ✨ Premium Detailing<br>
+
+        🏍️ Bike Wash<br>
+
+        💰 <span class="price">From ₹200 for bikes</span>
+
+    </div>
+
+    <button class="book-btn" onclick="book(this)">
+        Book Now
+    </button>
+
+    <div class="success-message">
+        ✅ Successfully Booked!
+    </div>
+
+</div>
+
+
+<!-- 3 -->
+<div class="card">
+
+    <div class="profile">
+
+        <div class="avatar">🚘</div>
+
+        <div>
+
+            <h3>Carro Care</h3>
+
+            <span class="verified">
+                ✔ Chennai Provider
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="details">
+
+        ⭐ <span class="rating">5.0</span> / 5<br>
+
+        🚗 Doorstep Car Wash<br>
+
+        📍 Mogappair West, Chennai<br>
+
+        🧼 Daily Car Wash<br>
+
+        ✨ Car Machine Polish<br>
+
+        🧽 Add-on Services<br>
+
+        🚘 Car Detailing<br>
+
+        🚚 Doorstep Service<br>
+
+        💰 <span class="price">Quote Required</span>
+
+    </div>
+
+    <button class="book-btn" onclick="book(this)">
+        Book Now
+    </button>
+
+    <div class="success-message">
+        ✅ Successfully Booked!
+    </div>
+
+</div>
+
+
+<!-- 4 -->
+<div class="card">
+
+    <div class="profile">
+
+        <div class="avatar">🚙</div>
+
+        <div>
+
+            <h3>Jee Water Wash</h3>
+
+            <span class="verified">
+                ✔ Chennai Provider
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="details">
+
+        ⭐ <span class="rating">4.7</span> / 5<br>
+
+        🚗 Vehicle Washing<br>
+
+        📍 Perumbakkam, Chennai<br>
+
+        🚘 Car Water Wash<br>
+
+        🏍️ Bike Water Wash<br>
+
+        🛺 Auto Water Wash<br>
+
+        🚚 Tata Ace Wash<br>
+
+        ✨ Polish & Detailing<br>
+
+        💰 <span class="price">Cars from ₹399</span>
+
+    </div>
+
+    <button class="book-btn" onclick="book(this)">
+        Book Now
+    </button>
+
+    <div class="success-message">
+        ✅ Successfully Booked!
+    </div>
+
+</div>
+
+
+<!-- 5 -->
+<div class="card">
+
+    <div class="profile">
+
+        <div class="avatar">✨</div>
+
+        <div>
+
+            <h3>Mobile Car Spa</h3>
+
+            <span class="verified">
+                ✔ Chennai Provider
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="details">
+
+        ⭐ <span class="rating">4.9</span> / 5<br>
+
+        🚗 Doorstep Car Wash<br>
+
+        📍 Velachery, Adyar & OMR<br>
+
+        🫧 Premium Foam Wash<br>
+
+        🧹 Deep Interior Cleaning<br>
+
+        ✨ Car Detailing<br>
+
+        🧽 Scratch & Swirl Removal<br>
+
+        🛡️ Ceramic Detailing<br>
+
+        💰 <span class="price">From ₹999</span>
+
+    </div>
+
+    <button class="book-btn" onclick="book(this)">
+        Book Now
+    </button>
+
+    <div class="success-message">
+        ✅ Successfully Booked!
+    </div>
+
+</div>
+
+
+<!-- 6 -->
+<div class="card">
+
+    <div class="profile">
+
+        <div class="avatar">🚿</div>
+
+        <div>
+
+            <h3>Friends Car Wash @ Door Step</h3>
+
+            <span class="verified">
+                ✔ Local Listing
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="details">
+
+        ⭐ <span class="rating">4.8</span> / 5<br>
+
+        🚗 Doorstep Car Wash<br>
+
+        📍 Pulianthope, Chennai<br>
+
+        🧼 Exterior Washing<br>
+
+        🧽 Interior Cleaning<br>
+
+        ✨ Car Polishing<br>
+
+        🚘 Vehicle Care<br>
+
+        🚚 Doorstep Service<br>
+
+        💰 <span class="price">Quote Required</span>
+
+    </div>
+
+    <button class="book-btn" onclick="book(this)">
+        Book Now
+    </button>
+
+    <div class="success-message">
+        ✅ Successfully Booked!
+    </div>
+
+</div>
+
+
+<!-- 7 -->
+<div class="card">
+
+    <div class="profile">
+
+        <div class="avatar">🚗</div>
+
+        <div>
+
+            <h3>Dawntown Detailing Studio</h3>
+
+            <span class="verified">
+                ✔ Local Listing
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="details">
+
+        ⭐ <span class="rating">4.9</span> / 5<br>
+
+        🚗 Car Detailing<br>
+
+        📍 Nungambakkam, Chennai<br>
+
+        🧼 Exterior Wash<br>
+
+        🧽 Interior Detailing<br>
+
+        ✨ Paint Care<br>
+
+        🛞 Wheel Cleaning<br>
+
+        🛡️ Vehicle Protection<br>
+
+        💰 <span class="price">Quote Required</span>
+
+    </div>
+
+    <button class="book-btn" onclick="book(this)">
+        Book Now
+    </button>
+
+    <div class="success-message">
+        ✅ Successfully Booked!
+    </div>
+
+</div>
+
+
+<!-- 8 -->
+<div class="card">
+
+    <div class="profile">
+
+        <div class="avatar">🚘</div>
+
+        <div>
+
+            <h3>Turtle Wax Car Care Studio</h3>
+
+            <span class="verified">
+                ✔ Local Listing
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="details">
+
+        ⭐ <span class="rating">4.9</span> / 5<br>
+
+        🚗 Car Wash & Care<br>
+
+        📍 Royapettah, Chennai<br>
+
+        🫧 Foam Washing<br>
+
+        🧽 Interior Cleaning<br>
+
+        ✨ Detailing<br>
+
+        🛞 Wheel & Tyre Cleaning<br>
+
+        🛡️ Paint Protection<br>
+
+        💰 <span class="price">Quote Required</span>
+
+    </div>
+
+    <button class="book-btn" onclick="book(this)">
+        Book Now
+    </button>
+
+    <div class="success-message">
+        ✅ Successfully Booked!
+    </div>
+
+</div>
+
+
+<!-- 9 -->
+<div class="card">
+
+    <div class="profile">
+
+        <div class="avatar">🏍️</div>
+
+        <div>
+
+            <h3>MR Car & Bike Wash</h3>
+
+            <span class="verified">
+                ✔ Local Listing
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="details">
+
+        ⭐ <span class="rating">4.5</span> / 5<br>
+
+        🚗 Car Washing<br>
+
+        📍 Royapuram, Chennai<br>
+
+        🏍️ Bike Washing<br>
+
+        🫧 Foam Wash<br>
+
+        💦 Water Wash<br>
+
+        🧽 Exterior Cleaning<br>
+
+        ✨ Vehicle Care<br>
+
+        💰 <span class="price">Quote Required</span>
+
+    </div>
+
+    <button class="book-btn" onclick="book(this)">
+        Book Now
+    </button>
+
+    <div class="success-message">
+        ✅ Successfully Booked!
+    </div>
+
+</div>
+
+
+<!-- 10 -->
+<div class="card">
+
+    <div class="profile">
+
+        <div class="avatar">✨</div>
+
+        <div>
+
+            <h3>VEETES CAR WASH</h3>
+
+            <span class="verified">
+                ✔ Local Listing
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="details">
+
+        ⭐ <span class="rating">4.9</span> / 5<br>
+
+        🚗 Car Wash<br>
+
+        📍 Jamalia, Chennai<br>
+
+        💦 Water Wash<br>
+
+        🫧 Foam Cleaning<br>
+
+        🧽 Interior Cleaning<br>
+
+        ✨ Vehicle Detailing<br>
+
+        🚘 Exterior Cleaning<br>
+
+        💰 <span class="price">Quote Required</span>
+
+    </div>
+
+    <button class="book-btn" onclick="book(this)">
+        Book Now
+    </button>
+
+    <div class="success-message">
+        ✅ Successfully Booked!
+    </div>
+
+</div>
+
+
+</div>
+
+
+<div class="back">
+
+    <a href="serviceche.html">
+        ← Back to Services
+    </a>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 <strong>QuickService</strong>.
+        All Rights Reserved.
+    </p>
+
+    <p style="margin-top:10px;">
+        Trusted Vehicle Washing Services in Chennai
+    </p>
+
+</footer>
+
+
+<script>
+
+function book(button) {
+
+    const card = button.parentElement;
+
+    const message =
+        card.querySelector(".success-message");
+
+    if (button.classList.contains("booked")) {
+        return;
+    }
+
+    button.innerHTML = "✓ Booked";
+
+    button.classList.add("booked");
+
+    message.style.display = "block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>

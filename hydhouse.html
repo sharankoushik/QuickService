@@ -1,0 +1,1144 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QuickService - House Cleaning Services Hyderabad</title>
+
+    <link rel="icon" type="image/png"
+        href="67c25e80-5fd6-472f-a12e-e9a79c00327e.png">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background-image: url("67c25e80-5fd6-472f-a12e-e9a79c00327e.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.68);
+            z-index: -1;
+        }
+
+        header {
+            background: rgba(17,24,39,0.97);
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            color: #fb923c;
+            font-size: 30px;
+        }
+
+        header p {
+            font-size: 15px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px 35px;
+        }
+
+        .hero h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            color: #d1d5db;
+            font-size: 17px;
+        }
+
+        .location {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            background: rgba(255,255,255,0.96);
+            color: #1f2937;
+            padding: 17px 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .location strong {
+            color: #0d9488;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .providers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.98);
+            color: #1f2937;
+            padding: 23px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            background: #fb923c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            flex-shrink: 0;
+        }
+
+        .profile h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .listed {
+            color: #0d9488;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .verified {
+            color: #059669;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .details {
+            line-height: 1.8;
+            color: #4b5563;
+            margin-bottom: 15px;
+        }
+
+        .rating {
+            color: #f97316;
+            font-weight: bold;
+        }
+
+        .phone {
+            color: #0d9488;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .call-btn,
+        .whatsapp-btn,
+        .book-btn {
+            width: 100%;
+            padding: 11px;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .call-btn {
+            background: #374151;
+        }
+
+        .call-btn:hover {
+            background: #1f2937;
+        }
+
+        .whatsapp-btn {
+            background: #059669;
+        }
+
+        .whatsapp-btn:hover {
+            background: #047857;
+        }
+
+        .book-btn {
+            background: #0d9488;
+            font-size: 16px;
+        }
+
+        .book-btn:hover {
+            background: #0f766e;
+        }
+
+        .booked {
+            background: #059669 !important;
+        }
+
+        .success-message {
+            display: none;
+            background: #d1fae5;
+            color: #047857;
+            padding: 12px;
+            margin-top: 12px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* LOCATION MODAL */
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.75);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            color: #1f2937;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .modal-content p {
+            color: #4b5563;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .close {
+            position: absolute;
+            right: 18px;
+            top: 14px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #4b5563;
+        }
+
+        .provider-selected {
+            background: #f0fdfa;
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            color: #0f766e;
+            font-weight: bold;
+        }
+
+        .location-status {
+            padding: 12px;
+            border-radius: 10px;
+            background: #f3f4f6;
+            margin-bottom: 15px;
+            color: #374151;
+            word-break: break-word;
+        }
+
+        .modal-buttons {
+            display: grid;
+            gap: 10px;
+        }
+
+        .modal-btn {
+            padding: 13px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .get-location {
+            background: #0d9488;
+            color: white;
+        }
+
+        .share-btn {
+            background: #7c3aed;
+            color: white;
+        }
+
+        .whatsapp-location {
+            background: #059669;
+            color: white;
+        }
+
+        .copy-btn {
+            background: #374151;
+            color: white;
+        }
+
+        .maps-btn {
+            background: #f97316;
+            color: #111827;
+        }
+
+        .disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .back {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .back a {
+            display: inline-block;
+            background: #fb923c;
+            color: #111827;
+            padding: 12px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back a:hover {
+            background: #f97316;
+        }
+
+        footer {
+            background: rgba(17,24,39,0.97);
+            text-align: center;
+            padding: 25px;
+            color: #d1d5db;
+            margin-top: 30px;
+        }
+
+        @media(max-width:600px) {
+
+            header {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+
+            .actions {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>🧹 QUICKSERVICE</h1>
+
+    <p>All Home Services At One Stop</p>
+
+</header>
+
+
+<section class="hero">
+
+    <h2>🧹 House Cleaning Services in Hyderabad</h2>
+
+    <p>
+        Find house cleaning service providers and contact them directly
+    </p>
+
+</section>
+
+
+<div class="location">
+
+    📍 Location:
+    <strong>Hyderabad, Telangana</strong>
+
+    &nbsp; | &nbsp;
+
+    🧹 Service:
+    <strong>House Cleaning Services</strong>
+
+</div>
+
+
+<main class="container">
+
+    <div class="providers" id="providers"></div>
+
+    <div class="back">
+
+        <a href="service.html">
+            ← Back to Services
+        </a>
+
+    </div>
+
+</main>
+
+
+<!-- LOCATION MODAL -->
+
+<div class="modal" id="locationModal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeLocationModal()">×</span>
+
+        <h2>📍 Share Your Location</h2>
+
+        <p>
+            Share your location with the selected cleaning service
+            provider so they can find your service address.
+        </p>
+
+        <div class="provider-selected" id="selectedProvider">
+            Provider
+        </div>
+
+        <div class="location-status" id="locationStatus">
+            📍 Your location has not been detected yet.
+        </div>
+
+        <div class="modal-buttons">
+
+            <button
+                class="modal-btn get-location"
+                onclick="getLocation()">
+                📍 Get My Current Location
+            </button>
+
+            <button
+                class="modal-btn share-btn disabled"
+                id="shareButton"
+                onclick="shareLocation()">
+                📤 Share Location
+            </button>
+
+            <button
+                class="modal-btn whatsapp-location disabled"
+                id="whatsappLocationButton"
+                onclick="shareOnWhatsApp()">
+                💬 Share on WhatsApp
+            </button>
+
+            <button
+                class="modal-btn copy-btn disabled"
+                id="copyButton"
+                onclick="copyLocation()">
+                📋 Copy Location Link
+            </button>
+
+            <button
+                class="modal-btn maps-btn disabled"
+                id="mapsButton"
+                onclick="openMaps()">
+                🗺️ Open Location in Google Maps
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <p>
+        © 2026 <strong>QuickService</strong>.
+        All Rights Reserved.
+    </p>
+
+    <p style="margin-top:10px;">
+        House Cleaning Services in Hyderabad
+    </p>
+
+</footer>
+
+
+<script>
+
+/*
+=========================================================
+PUBLICLY LISTED HYDERABAD CLEANING SERVICES
+=========================================================
+
+Phone numbers are included only where publicly listed
+by the service provider or its public service page.
+Information can change, so recheck before production use.
+*/
+
+const providers = [
+
+    {
+        name: "Vijay Home Services",
+        phone: "8453748478",
+        area: "Hyderabad",
+        rating: "4.9",
+        reviews: "Publicly listed",
+        verified: true,
+        avatar: "🧹"
+    },
+
+    {
+        name: "Alpha Cleaning Services",
+        phone: "7483112375",
+        area: "Malkajgiri / Anandbagh",
+        rating: "—",
+        reviews: "Publicly listed",
+        verified: true,
+        avatar: "🏠"
+    },
+
+    {
+        name: "LocalRamu Deep Cleaning Services",
+        phone: "767407640",
+        area: "Hyderabad",
+        rating: "4.51",
+        reviews: "1717",
+        verified: true,
+        avatar: "✨"
+    },
+
+    {
+        name: "Maid for Home",
+        phone: "7569356918",
+        area: "Hyderabad",
+        rating: "—",
+        reviews: "Publicly listed",
+        verified: true,
+        avatar: "🧽"
+    },
+
+    {
+        name: "TechSquadTeam Cleaning Services",
+        phone: "",
+        area: "Hyderabad",
+        rating: "4.9",
+        reviews: "Publicly listed",
+        verified: true,
+        avatar: "🧼"
+    }
+
+];
+
+
+const providersContainer =
+    document.getElementById("providers");
+
+
+/*
+=========================================================
+DISPLAY PROVIDERS
+=========================================================
+*/
+
+providers.forEach((provider, index) => {
+
+    const card = document.createElement("div");
+
+    card.className = "card";
+
+    const verifiedText = provider.verified
+        ? `<span class="verified">✔ Public Business Information</span>`
+        : `<span class="listed">● Public Business Listing</span>`;
+
+    const phoneHTML = provider.phone
+        ? `
+            📞
+            <a
+                class="phone"
+                href="tel:+91${provider.phone}">
+                +91 ${provider.phone}
+            </a>
+        `
+        : `
+            📞 Contact provider through their official service page
+        `;
+
+    const callButton = provider.phone
+        ? `
+            <a
+                class="call-btn"
+                href="tel:+91${provider.phone}">
+                📞 Call
+            </a>
+        `
+        : `
+            <button
+                class="call-btn"
+                onclick="alert('Phone number is not publicly listed here. Please use the provider website to contact them.')">
+                📞 Contact
+            </button>
+        `;
+
+    const whatsappButton = provider.phone
+        ? `
+            <a
+                class="whatsapp-btn"
+                href="https://wa.me/91${provider.phone}"
+                target="_blank">
+                💬 WhatsApp
+            </a>
+        `
+        : `
+            <button
+                class="whatsapp-btn"
+                onclick="alert('WhatsApp number is not publicly listed here.')">
+                💬 WhatsApp
+            </button>
+        `;
+
+    card.innerHTML = `
+
+        <div class="profile">
+
+            <div class="avatar">
+                ${provider.avatar}
+            </div>
+
+            <div>
+
+                <h3>${provider.name}</h3>
+
+                ${verifiedText}
+
+            </div>
+
+        </div>
+
+
+        <div class="details">
+
+            ⭐
+            <span class="rating">
+                ${provider.rating}
+            </span>
+
+            ${provider.reviews !== "Publicly listed"
+                ? `/ 5 (${provider.reviews} reviews)`
+                : ""}
+
+            <br>
+
+            📍 ${provider.area}
+
+            <br>
+
+            ${phoneHTML}
+
+            <br>
+
+            🧹 House cleaning, deep cleaning,
+            kitchen & bathroom cleaning
+
+        </div>
+
+
+        <div class="actions">
+
+            ${callButton}
+
+            ${whatsappButton}
+
+        </div>
+
+
+        <button
+            class="book-btn"
+            onclick="bookProvider(${index}, this)">
+            📅 Book Now
+        </button>
+
+
+        <div class="success-message">
+            ✅ Booking request started!
+        </div>
+
+    `;
+
+    providersContainer.appendChild(card);
+
+});
+
+
+/*
+=========================================================
+BOOKING
+=========================================================
+*/
+
+let selectedProvider = null;
+let currentLocationLink = "";
+
+
+function bookProvider(index, button) {
+
+    selectedProvider = providers[index];
+
+    document.getElementById("selectedProvider").innerHTML =
+        `🧹 Booking with: ${selectedProvider.name}
+         <br>
+         ${selectedProvider.phone
+            ? `📞 +91 ${selectedProvider.phone}`
+            : `📞 Phone number not publicly listed here`
+         }`;
+
+    document.getElementById("locationStatus").innerHTML =
+        "📍 Your location has not been detected yet.";
+
+    currentLocationLink = "";
+
+    disableLocationButtons();
+
+    document.getElementById("locationModal").style.display = "flex";
+
+    button.innerHTML = "✓ Booking Started";
+
+    button.classList.add("booked");
+
+    const message =
+        button.parentElement.querySelector(".success-message");
+
+    message.style.display = "block";
+
+}
+
+
+/*
+=========================================================
+CLOSE MODAL
+=========================================================
+*/
+
+function closeLocationModal() {
+
+    document.getElementById("locationModal").style.display = "none";
+
+}
+
+
+/*
+=========================================================
+GET USER LOCATION
+=========================================================
+*/
+
+function getLocation() {
+
+    const status =
+        document.getElementById("locationStatus");
+
+    if (!navigator.geolocation) {
+
+        status.innerHTML =
+            "❌ Location services are not supported by this browser.";
+
+        return;
+
+    }
+
+    status.innerHTML =
+        "⏳ Getting your current location...";
+
+
+    navigator.geolocation.getCurrentPosition(
+
+        function(position) {
+
+            const latitude =
+                position.coords.latitude;
+
+            const longitude =
+                position.coords.longitude;
+
+
+            currentLocationLink =
+                `https://www.google.com/maps?q=${latitude},${longitude}`;
+
+
+            status.innerHTML = `
+
+                ✅ Location detected!
+
+                <br><br>
+
+                Latitude:
+                ${latitude.toFixed(6)}
+
+                <br>
+
+                Longitude:
+                ${longitude.toFixed(6)}
+
+            `;
+
+            enableLocationButtons();
+
+        },
+
+
+        function(error) {
+
+            if (error.code === 1) {
+
+                status.innerHTML =
+                    "❌ Location permission was denied. Please allow location access in your browser.";
+
+            }
+
+            else if (error.code === 2) {
+
+                status.innerHTML =
+                    "❌ Your location could not be determined.";
+
+            }
+
+            else {
+
+                status.innerHTML =
+                    "❌ Unable to get your location. Please try again.";
+
+            }
+
+        },
+
+        {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
+        }
+
+    );
+
+}
+
+
+/*
+=========================================================
+ENABLE LOCATION BUTTONS
+=========================================================
+*/
+
+function enableLocationButtons() {
+
+    document
+        .getElementById("shareButton")
+        .classList.remove("disabled");
+
+    document
+        .getElementById("whatsappLocationButton")
+        .classList.remove("disabled");
+
+    document
+        .getElementById("copyButton")
+        .classList.remove("disabled");
+
+    document
+        .getElementById("mapsButton")
+        .classList.remove("disabled");
+
+}
+
+
+/*
+=========================================================
+DISABLE LOCATION BUTTONS
+=========================================================
+*/
+
+function disableLocationButtons() {
+
+    document
+        .getElementById("shareButton")
+        .classList.add("disabled");
+
+    document
+        .getElementById("whatsappLocationButton")
+        .classList.add("disabled");
+
+    document
+        .getElementById("copyButton")
+        .classList.add("disabled");
+
+    document
+        .getElementById("mapsButton")
+        .classList.add("disabled");
+
+}
+
+
+/*
+=========================================================
+BROWSER SHARE
+=========================================================
+*/
+
+async function shareLocation() {
+
+    if (!currentLocationLink) {
+
+        alert("Please get your current location first.");
+
+        return;
+
+    }
+
+
+    const message =
+        `Hello ${selectedProvider.name},
+
+I have booked your house cleaning service through QuickService.
+
+📍 My service location:
+${currentLocationLink}
+
+Please use this location to reach me.`;
+
+
+    if (navigator.share) {
+
+        try {
+
+            await navigator.share({
+
+                title: "QuickService Cleaning Booking",
+
+                text: message,
+
+                url: currentLocationLink
+
+            });
+
+        }
+
+        catch (error) {
+
+            console.log("Share cancelled.");
+
+        }
+
+    }
+
+    else {
+
+        await copyLocation();
+
+        alert(
+            "Your browser does not support direct sharing. The location link has been copied."
+        );
+
+    }
+
+}
+
+
+/*
+=========================================================
+WHATSAPP
+=========================================================
+*/
+
+function shareOnWhatsApp() {
+
+    if (!currentLocationLink) {
+
+        alert("Please get your current location first.");
+
+        return;
+
+    }
+
+
+    if (!selectedProvider.phone) {
+
+        alert(
+            "A WhatsApp number for this provider is not publicly listed here."
+        );
+
+        return;
+
+    }
+
+
+    const message =
+        `Hello ${selectedProvider.name},
+
+I booked your house cleaning service through QuickService.
+
+📍 My service location:
+${currentLocationLink}
+
+Please use this location to reach me.
+
+Thank you.`;
+
+
+    const whatsappURL =
+        "https://wa.me/91" +
+        selectedProvider.phone +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+}
+
+
+/*
+=========================================================
+COPY LOCATION
+=========================================================
+*/
+
+async function copyLocation() {
+
+    if (!currentLocationLink) {
+
+        alert("Please get your current location first.");
+
+        return;
+
+    }
+
+
+    try {
+
+        await navigator.clipboard.writeText(
+            currentLocationLink
+        );
+
+        alert(
+            "📋 Location link copied successfully!"
+        );
+
+    }
+
+    catch (error) {
+
+        alert(
+            "Unable to copy automatically."
+        );
+
+    }
+
+}
+
+
+/*
+=========================================================
+OPEN GOOGLE MAPS
+=========================================================
+*/
+
+function openMaps() {
+
+    if (!currentLocationLink) {
+
+        alert("Please get your current location first.");
+
+        return;
+
+    }
+
+
+    window.open(
+        currentLocationLink,
+        "_blank"
+    );
+
+}
+
+
+/*
+=========================================================
+CLICK OUTSIDE MODAL TO CLOSE
+=========================================================
+*/
+
+window.addEventListener(
+    "click",
+    function(event) {
+
+        const modal =
+            document.getElementById("locationModal");
+
+        if (event.target === modal) {
+
+            closeLocationModal();
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>
+```

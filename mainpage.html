@@ -1,0 +1,562 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeService Finder</title>
+<link rel="icon" type="image/png" href="67c25e80-5fd6-472f-a12e-e9a79c00327e.png">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: #f8fafc;
+            color: #1f2937;
+        }
+
+        header {
+            background: #0d9488;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 25px;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        .hero {
+            background: linear-gradient(
+                rgba(23, 105, 170, 0.85),
+                rgba(23, 105, 170, 0.85)
+            ),
+            url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            min-height: 430px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 30px;
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 850px;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .search-box {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            display: grid;
+            grid-template-columns: 1fr 1fr auto;
+            gap: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        button {
+            border: none;
+            background: #ff8a00;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #e97900;
+        }
+
+        .results {
+            padding: 45px 8%;
+        }
+
+        .results h2 {
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        #providerList {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .provider-card {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .provider-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .provider-image {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            background: #f0fdfa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .provider-card h3 {
+            margin-bottom: 8px;
+            color: #0d9488;
+        }
+
+        .provider-card p {
+            margin: 8px 0;
+            color: #4b5563;
+        }
+
+        .rating {
+            color: #f5a623;
+            font-weight: bold;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #1f2937;
+        }
+
+        .contact-btn {
+            width: 100%;
+            margin-top: 15px;
+            background: #0d9488;
+        }
+
+        .contact-btn:hover {
+            background: #0f766e;
+        }
+
+        .no-results {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            color: #6b7280;
+        }
+
+        footer {
+            background: #134e4a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        @media(max-width: 700px) {
+            .search-box {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🏠 HomeService Finder</h1>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#providers">Providers</a>
+        <a href="#">Login</a>
+    </nav>
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h2>Find Trusted Home Service Providers</h2>
+
+        <p>
+            Select the service you need and enter your location
+            to find nearby professionals.
+        </p>
+
+        <div class="search-box">
+
+            <!-- SERVICE -->
+            <select id="service">
+                <option value="">Select Home Service</option>
+                <option value="Plumber">🔧 Plumber</option>
+                <option value="Electrician">⚡ Electrician</option>
+                <option value="Cleaner">🧹 Home Cleaner</option>
+                <option value="Carpenter">🪚 Carpenter</option>
+                <option value="AC Technician">❄️ AC Technician</option>
+                <option value="Painter">🎨 Painter</option>
+            </select>
+
+
+            <!-- LOCATION -->
+            <input
+                type="text"
+                id="location"
+                placeholder="Enter your location"
+            >
+
+
+            <!-- SEARCH -->
+            <button onclick="findProviders()">
+                Find Providers
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="results" id="providers">
+
+    <h2 id="resultTitle">
+        Available Service Providers
+    </h2>
+
+    <div id="providerList">
+
+        <div class="no-results">
+            Select a service and enter your location to find providers.
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+    <p>© 2026 HomeService Finder | Find trusted professionals near you</p>
+</footer>
+
+
+<script>
+
+    // SAMPLE PROVIDER DATABASE
+    const providers = [
+
+        {
+            name: "Ravi Kumar",
+            service: "Plumber",
+            location: "Vijayawada",
+            rating: "4.8",
+            experience: "8 Years",
+            price: "₹300 / Visit",
+            icon: "🔧"
+        },
+
+        {
+            name: "Suresh Electricals",
+            service: "Electrician",
+            location: "Vijayawada",
+            rating: "4.7",
+            experience: "6 Years",
+            price: "₹250 / Visit",
+            icon: "⚡"
+        },
+
+        {
+            name: "CleanHome Services",
+            service: "Cleaner",
+            location: "Vijayawada",
+            rating: "4.9",
+            experience: "5 Years",
+            price: "₹500 / Service",
+            icon: "🧹"
+        },
+
+        {
+            name: "Sai Carpentry Works",
+            service: "Carpenter",
+            location: "Vijayawada",
+            rating: "4.6",
+            experience: "10 Years",
+            price: "₹400 / Visit",
+            icon: "🪚"
+        },
+
+        {
+            name: "CoolAir Solutions",
+            service: "AC Technician",
+            location: "Vijayawada",
+            rating: "4.8",
+            experience: "7 Years",
+            price: "₹350 / Visit",
+            icon: "❄️"
+        },
+
+        {
+            name: "Ramesh Painters",
+            service: "Painter",
+            location: "Vijayawada",
+            rating: "4.5",
+            experience: "9 Years",
+            price: "₹700 / Day",
+            icon: "🎨"
+        },
+
+
+        // Hyderabad providers
+
+        {
+            name: "Hyderabad Plumbing Experts",
+            service: "Plumber",
+            location: "Hyderabad",
+            rating: "4.9",
+            experience: "11 Years",
+            price: "₹350 / Visit",
+            icon: "🔧"
+        },
+
+        {
+            name: "City Electric Services",
+            service: "Electrician",
+            location: "Hyderabad",
+            rating: "4.8",
+            experience: "9 Years",
+            price: "₹300 / Visit",
+            icon: "⚡"
+        },
+
+        {
+            name: "FreshHome Cleaners",
+            service: "Cleaner",
+            location: "Hyderabad",
+            rating: "4.7",
+            experience: "6 Years",
+            price: "₹600 / Service",
+            icon: "🧹"
+        },
+
+
+        // Bangalore providers
+
+        {
+            name: "Bangalore Plumbing Services",
+            service: "Plumber",
+            location: "Bangalore",
+            rating: "4.8",
+            experience: "7 Years",
+            price: "₹300 / Visit",
+            icon: "🔧"
+        },
+
+        {
+            name: "PowerFix Electricals",
+            service: "Electrician",
+            location: "Bangalore",
+            rating: "4.9",
+            experience: "10 Years",
+            price: "₹350 / Visit",
+            icon: "⚡"
+        }
+
+    ];
+
+
+    function findProviders() {
+
+        const selectedService =
+            document.getElementById("service").value;
+
+        const enteredLocation =
+            document.getElementById("location").value
+            .trim()
+            .toLowerCase();
+
+        const providerList =
+            document.getElementById("providerList");
+
+        const resultTitle =
+            document.getElementById("resultTitle");
+
+
+        // CHECK INPUT
+
+        if (selectedService === "" || enteredLocation === "") {
+
+            providerList.innerHTML = `
+                <div class="no-results">
+                    ⚠️ Please select a service and enter your location.
+                </div>
+            `;
+
+            return;
+        }
+
+
+        // FILTER PROVIDERS
+
+        const matchingProviders = providers.filter(provider =>
+
+            provider.service === selectedService &&
+
+            provider.location
+                .toLowerCase()
+                .includes(enteredLocation)
+
+        );
+
+
+        // CLEAR OLD RESULTS
+
+        providerList.innerHTML = "";
+
+
+        // NO PROVIDERS
+
+        if (matchingProviders.length === 0) {
+
+            resultTitle.innerText =
+                "No Providers Found";
+
+            providerList.innerHTML = `
+                <div class="no-results">
+                    😔 No ${selectedService} providers found
+                    near "${enteredLocation}".
+                    <br><br>
+                    Try another location.
+                </div>
+            `;
+
+            return;
+        }
+
+
+        // SHOW RESULTS
+
+        resultTitle.innerText =
+            `${matchingProviders.length} ${selectedService} Provider(s) Found`;
+
+
+        matchingProviders.forEach(provider => {
+
+            const card = document.createElement("div");
+
+            card.className = "provider-card";
+
+            card.innerHTML = `
+
+                <div class="provider-image">
+                    ${provider.icon}
+                </div>
+
+                <h3>${provider.name}</h3>
+
+                <p>
+                    <strong>Service:</strong>
+                    ${provider.service}
+                </p>
+
+                <p>
+                    📍 <strong>Location:</strong>
+                    ${provider.location}
+                </p>
+
+                <p>
+                    ⭐ <span class="rating">
+                        ${provider.rating}/5
+                    </span>
+                </p>
+
+                <p>
+                    👨‍🔧 <strong>Experience:</strong>
+                    ${provider.experience}
+                </p>
+
+                <p class="price">
+                    💰 ${provider.price}
+                </p>
+
+                <button
+                    class="contact-btn"
+                    onclick="contactProvider('${provider.name}')">
+
+                    Contact Provider
+
+                </button>
+            `;
+
+            providerList.appendChild(card);
+
+        });
+
+    }
+
+
+    function contactProvider(name) {
+
+        alert(
+            "You selected " + name +
+            ". Provider contact/booking can be connected here."
+        );
+
+    }
+
+</script>
+
+</body>
+</html>

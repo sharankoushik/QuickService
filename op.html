@@ -1,0 +1,469 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QuickService - Local Service Finder</title>
+<link rel="icon" type="image/png" href="67c25e80-5fd6-472f-a12e-e9a79c00327e.png">
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background-image: url("67c25e80-5fd6-472f-a12e-e9a79c00327e.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        /* Dark background overlay */
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.62);
+            z-index: -1;
+        }
+
+
+        /* HEADER */
+
+        header {
+            background: rgba(17, 24, 39, 0.96);
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            color: #fb923c;
+            font-size: 30px;
+        }
+
+        header p {
+            font-size: 15px;
+        }
+
+
+        /* TOP NOTICE */
+
+        .notice {
+            background: #fb923c;
+            color: #111827;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            overflow: hidden;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+            padding: 65px 20px 45px;
+        }
+
+        .hero h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #e5e7eb;
+        }
+
+
+        /* MAIN */
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .container-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .container-title h2 {
+            font-size: 30px;
+        }
+
+        .container-title p {
+            margin-top: 8px;
+            color: #d1d5db;
+        }
+
+
+        /* CITY GRID */
+
+        .cities {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+
+        /* CITY CARD */
+
+        .city-card {
+            background: rgba(255,255,255,0.96);
+            color: #1f2937;
+            border-radius: 18px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        .city-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.4);
+        }
+
+        .city-icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .city-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .city-card p {
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+
+
+        /* BUTTON */
+
+        .city-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: #0d9488;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .city-btn:hover {
+            background: #0f766e;
+            transform: scale(1.03);
+        }
+
+
+        /* ACCOUNT SECTION */
+
+        .account {
+            width: 90%;
+            max-width: 1100px;
+            margin: 45px auto 0;
+            background: rgba(17,24,39,0.95);
+            padding: 25px;
+            border-radius: 14px;
+            text-align: center;
+        }
+
+        .account h3 {
+            margin-bottom: 15px;
+        }
+
+        .logout-btn {
+            border: none;
+            background: #dc2626;
+            color: white;
+            padding: 11px 30px;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .logout-btn:hover {
+            background: #b91c1c;
+        }
+
+
+        /* ABOUT */
+
+        .bottom-links {
+            text-align: center;
+            margin: 35px auto;
+        }
+
+        .bottom-links a {
+            color: #fb923c;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .bottom-links a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background: rgba(17,24,39,0.97);
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+            color: #d1d5db;
+        }
+
+        footer a {
+            color: #fb923c;
+            text-decoration: none;
+        }
+
+
+        /* MOBILE */
+
+        @media(max-width:600px) {
+
+            header {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            .hero {
+                padding-top: 45px;
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .container-title h2 {
+                font-size: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NOTICE -->
+
+    <div class="notice"> <marquee>
+        📢 WE ARE CURRENTLY AVAILABLE IN ONLY FEW CITIES AT THE MOMENT</marquee>
+    </div>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>⚡ QUICKSERVICE</h1>
+
+        <p>All Home Services At One Stop</p>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h2>🏠 Find Local Service Providers</h2>
+
+        <p>
+            Choose your city and find trusted home service professionals.
+        </p>
+
+    </section>
+
+
+    <!-- CITY SELECTION -->
+
+    <main class="container">
+
+        <div class="container-title">
+
+            <h2>📍 Select Your Location</h2>
+
+            <p>Currently available in these cities</p>
+
+        </div>
+
+
+        <div class="cities">
+
+
+            <!-- HYDERABAD -->
+
+            <div class="city-card">
+
+                <div class="city-icon">🌆</div>
+
+                <h3>Hyderabad</h3>
+
+                <p>
+                    Find electricians, carpenters,
+                    cleaners and more.
+                </p>
+
+                <a href="service.html" class="city-btn">
+                    Explore Services →
+                </a>
+
+            </div>
+
+
+            <!-- BENGALURU -->
+
+            <div class="city-card">
+
+                <div class="city-icon">🏙️</div>
+
+                <h3>Bengaluru</h3>
+
+                <p>
+                    Find trusted home service
+                    providers near you.
+                </p>
+
+                <a href="serviceblr.html" class="city-btn">
+                    Explore Services →
+                </a>
+
+            </div>
+
+
+            <!-- MUMBAI -->
+
+            <div class="city-card">
+
+                <div class="city-icon">🌇</div>
+
+                <h3>Mumbai</h3>
+
+                <p>
+                    Book professional home services
+                    easily and quickly.
+                </p>
+
+                <a href="servicemum.html" class="city-btn">
+                    Explore Services →
+                </a>
+
+            </div>
+
+
+            <!-- CHENNAI -->
+
+            <div class="city-card">
+
+                <div class="city-icon">🌴</div>
+
+                <h3>Chennai</h3>
+
+                <p>
+                    Connect with reliable service
+                    providers in Chennai.
+                </p>
+
+                <a href="serviceche.html" class="city-btn">
+                    Explore Services →
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ACCOUNT -->
+
+    <section class="account">
+
+        <h3>👤 Account</h3>
+
+        <p style="margin-bottom:15px;">
+            Finished using QuickService?
+        </p>
+
+        <form action="pp.html" method="get">
+
+            <button class="logout-btn" type="submit">
+                Logout
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <div class="bottom-links">
+
+        <h3>
+            ℹ️ Know more
+            <a href="more.html">About Us</a>
+        </h3>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 <strong>QuickService</strong>.
+            All Rights Reserved.
+        </p>
+
+        <p style="margin-top:10px;">
+            Know more about our
+            <a href="copyright.html">Copyright Policy</a>
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
