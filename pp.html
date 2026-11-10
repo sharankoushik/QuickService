@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickService - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+
+<header>
+    <h1>QuickService</h1>
+    <p>All home services at one stop</p>
+</header>
+
+<main>
+    <div class="box">
+        <h2>Login</h2>
+
+        <form id="loginForm">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+
+            <p style="text-align:right; margin:8px 0 0;"><a href="forget password.html">Forgot password?</a></p>
+
+            <button type="submit" class="full">Login</button>
+        </form>
+
+        <div id="message"></div>
+
+        <p class="small-link">Do not have an account? <a href="ceate.html">Create Account</a></p>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 QuickService. All rights reserved.</p>
+    <p><a href="more.html">About Us</a> | <a href="copyright.html">Copyright Policy</a></p>
+</footer>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyDn15soeEJeuYfEvQyvzK-MKWZCuhgGx9g",
+        authDomain: "quickservice-da485.firebaseapp.com",
+        projectId: "quickservice-da485",
+        storageBucket: "quickservice-da485.firebasestorage.app",
+        messagingSenderId: "348321079075",
+        appId: "1:348321079075:web:561fb3f738cb40023db696",
+        measurementId: "G-Z7LXSELJK2"
+    };
+
+    const auth = getAuth(initializeApp(firebaseConfig));
+    const message = document.getElementById("message");
+
+    function showMessage(text, type) {
+        message.textContent = text;
+        message.className = "message " + type;
+    }
+
+    document.getElementById("loginForm").addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+
+        try {
+            await signInWithEmailAndPassword(auth, email, password);
+            showMessage("Login successful. Redirecting...", "success");
+            setTimeout(function () {
+                window.location.href = "op.html";
+            }, 1000);
+        } catch (error) {
+            if (error.code === "auth/too-many-requests") {
+                showMessage("Too many failed attempts. Please try again later.", "error");
+            } else {
+                showMessage("Wrong email or password. Create an account if you do not have one.", "error");
+            }
+        }
+    });
+</script>
+</body>
+</html>

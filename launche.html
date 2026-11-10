@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickService - Laundry Services Chennai</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1><a href="op.html">QuickService</a></h1>
+    <p>All home services at one stop</p>
+</header>
+
+<main>
+    <h2>Laundry Services in Chennai</h2>
+    <p class="muted">Location: Chennai, Tamil Nadu | 10 providers listed</p>
+
+    <div class="grid">
+
+<div class="card" data-name="LaundryBus">
+    <h3>LaundryBus</h3>
+    <p class="tag">Chennai Provider</p>
+    <p><span class="rating">Professional Service</span></p>
+    <p>Wash &amp; Fold</p>
+    <p>Area: Chennai</p>
+    <p>Everyday Laundry</p>
+    <p>Premium Fabric Care</p>
+    <p>Wash &amp; Iron</p>
+    <p>Steam Ironing</p>
+    <p>Dry Cleaning</p>
+    <p>Price: <span class="price">From ₹80/kg</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="Big Laundry">
+    <h3>Big Laundry</h3>
+    <p class="tag">Chennai Provider</p>
+    <p>Rating: <span class="rating">4.2</span> / 5</p>
+    <p>Laundry Service</p>
+    <p>Area: Chennai</p>
+    <p>Machine Wash</p>
+    <p>Steam Wash &amp; Press</p>
+    <p>Steam Pressing</p>
+    <p>Dry Cleaning</p>
+    <p>Free Pickup &amp; Delivery</p>
+    <p>Price: <span class="price">From ₹1,000/package</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="The Laundry Kart">
+    <h3>The Laundry Kart</h3>
+    <p class="tag">Chennai Provider</p>
+    <p><span class="rating">Professional Service</span></p>
+    <p>Wash &amp; Steam Iron</p>
+    <p>Area: Valasaravakkam, Korattur &amp; Ambattur</p>
+    <p>Dry Cleaning</p>
+    <p>Regular Laundry</p>
+    <p>Bedsheet Cleaning</p>
+    <p>Curtain Cleaning</p>
+    <p>Shoe Cleaning</p>
+    <p>Price: <span class="price">From ₹100/kg</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="Clean Living">
+    <h3>Clean Living</h3>
+    <p class="tag">Chennai Provider</p>
+    <p><span class="rating">Professional Service</span></p>
+    <p>Laundry Service</p>
+    <p>Area: Multiple Chennai Locations</p>
+    <p>Dry Cleaning</p>
+    <p>Hi-Tech Laundry</p>
+    <p>Stain Removal</p>
+    <p>Sofa Cleaning</p>
+    <p>Carpet Cleaning</p>
+    <p>Price: <span class="price">Quote Required</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="Thee Washers">
+    <h3>Thee Washers</h3>
+    <p class="tag">Chennai Provider</p>
+    <p><span class="rating">Professional Service</span></p>
+    <p>Personal Laundry</p>
+    <p>Area: Ullagaram, Chennai</p>
+    <p>Wash &amp; Iron</p>
+    <p>Dry Cleaning</p>
+    <p>Steam Pressing</p>
+    <p>Saree Polishing</p>
+    <p>Carpet &amp; Curtain Cleaning</p>
+    <p>Pickup &amp; Delivery</p>
+    <p>Price: <span class="price">Quote Required</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="Madras Ironing Company">
+    <h3>Madras Ironing Company</h3>
+    <p class="tag">Chennai Provider</p>
+    <p><span class="rating">Professional Service</span></p>
+    <p>Garment Laundry</p>
+    <p>Area: T. Nagar &amp; Choolaimedu</p>
+    <p>Dry Cleaning</p>
+    <p>Steam Ironing</p>
+    <p>Saree Care</p>
+    <p>Bedsheet Cleaning</p>
+    <p>Curtain Cleaning</p>
+    <p>Price: <span class="price">From ₹40/item</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="DipDryCare">
+    <h3>DipDryCare</h3>
+    <p class="tag">Chennai Service</p>
+    <p>Rating: <span class="rating">4.8</span> / 5</p>
+    <p>Laundry &amp; Dry Cleaning</p>
+    <p>Area: Chennai</p>
+    <p>Doorstep Pickup</p>
+    <p>Dry Cleaning</p>
+    <p>Silk Saree Care</p>
+    <p>Corporate Laundry</p>
+    <p>Fabric Care</p>
+    <p>Home Delivery</p>
+    <p>Price: <span class="price">Quote Required</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="Wash Maxx">
+    <h3>Wash Maxx</h3>
+    <p class="tag">Local Provider</p>
+    <p><span class="rating">Local Service</span></p>
+    <p>Laundry Service</p>
+    <p>Area: Mogappair West, Chennai</p>
+    <p>Dry Cleaning</p>
+    <p>Steam Ironing</p>
+    <p>Shoe Cleaning</p>
+    <p>Curtain Cleaning</p>
+    <p>Sofa Cleaning</p>
+    <p>Price: <span class="price">Quote Required</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="Chennai Dry Cleaners">
+    <h3>Chennai Dry Cleaners</h3>
+    <p class="tag">Chennai Provider</p>
+    <p><span class="rating">Professional Service</span></p>
+    <p>Wet Cleaning</p>
+    <p>Area: Chennai</p>
+    <p>Dry Cleaning</p>
+    <p>Saree Polishing</p>
+    <p>Stain Removal</p>
+    <p>Pressing</p>
+    <p>Darning &amp; Repairs</p>
+    <p>Pickup &amp; Delivery</p>
+    <p>Price: <span class="price">Quote Required</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="Professional Laundry Chennai">
+    <h3>Professional Laundry Chennai</h3>
+    <p class="tag">Local Service</p>
+    <p>Rating: <span class="rating">4.7</span> / 5</p>
+    <p>Daily Wear Laundry</p>
+    <p>Area: Chennai</p>
+    <p>Wash &amp; Fold</p>
+    <p>Ironing</p>
+    <p>Dry Cleaning</p>
+    <p>Bedsheet Washing</p>
+    <p>Curtain Cleaning</p>
+    <p>Doorstep Pickup</p>
+    <p>Price: <span class="price">Quote Required</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+
+    </div>
+
+    <p class="back"><a href="serviceche.html">Back to Services</a></p>
+</main>
+
+<footer>
+    <p>&copy; 2026 QuickService. All rights reserved.</p>
+    <p><a href="more.html">About Us</a> | <a href="copyright.html">Copyright Policy</a></p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

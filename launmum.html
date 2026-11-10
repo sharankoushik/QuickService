@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickService - Laundry Services Mumbai</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1><a href="op.html">QuickService</a></h1>
+    <p>All home services at one stop</p>
+</header>
+
+<main>
+    <h2>Laundry Services in Mumbai</h2>
+    <p class="muted">Location: Mumbai, Maharashtra | 10 providers listed</p>
+
+    <div class="grid">
+
+<div class="card" data-name="Laundriz">
+    <h3>Laundriz</h3>
+    <p class="tag">Listed Provider</p>
+    <p>Rating: <span class="rating">4.8</span> / 5</p>
+    <p>Wash &amp; Fold</p>
+    <p>Area: Mumbai</p>
+    <p>Wash &amp; Iron</p>
+    <p>Dry Cleaning</p>
+    <p>Steam Press</p>
+    <p>Pickup &amp; Delivery</p>
+    <p>Price: <span class="price">From ₹140/kg</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="Fabricare">
+    <h3>Fabricare</h3>
+    <p class="tag">Listed Provider</p>
+    <p>Rating: <span class="rating">4.7</span> / 5</p>
+    <p>Wet Wash</p>
+    <p>Area: Vile Parle, Mumbai</p>
+    <p>Dry Cleaning</p>
+    <p>Steam Press</p>
+    <p>Ironing</p>
+    <p>Shoe Laundry</p>
+    <p>Price: <span class="price">Quote Required</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="Closet Care Drycleaners">
+    <h3>Closet Care Drycleaners</h3>
+    <p class="tag">Listed Provider</p>
+    <p>Rating: <span class="rating">4.6</span> / 5</p>
+    <p>Wash &amp; Iron</p>
+    <p>Area: Andheri West, Mumbai</p>
+    <p>Wash &amp; Fold</p>
+    <p>Dry Cleaning</p>
+    <p>Curtain Cleaning</p>
+    <p>Shoe Cleaning</p>
+    <p>Price: <span class="price">From ₹170/kg</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="Laundry Hub Mumbai">
+    <h3>Laundry Hub Mumbai</h3>
+    <p class="tag">Listed Provider</p>
+    <p>Rating: <span class="rating">4.7</span> / 5</p>
+    <p>Wash &amp; Fold</p>
+    <p>Area: Malad East, Mumbai</p>
+    <p>Wash &amp; Iron</p>
+    <p>Express Laundry</p>
+    <p>Dry Cleaning</p>
+    <p>Shoe Laundry</p>
+    <p>Price: <span class="price">From ₹119/kg</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="Wish Laundry">
+    <h3>Wish Laundry</h3>
+    <p class="tag">Listed Provider</p>
+    <p>Rating: <span class="rating">4.7</span> / 5</p>
+    <p>Washing</p>
+    <p>Area: Mumbai</p>
+    <p>Ironing &amp; Steam Ironing</p>
+    <p>Dry Cleaning</p>
+    <p>Shoe Laundry</p>
+    <p>Curtain Washing</p>
+    <p>Free Pickup &amp; Delivery</p>
+    <p>Price: <span class="price">Quote Required</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="Kleenito">
+    <h3>Kleenito</h3>
+    <p class="tag">Listed Provider</p>
+    <p>Rating: <span class="rating">4.6</span> / 5</p>
+    <p>Professional Laundry</p>
+    <p>Area: Borivali West, Mumbai</p>
+    <p>Dry Cleaning</p>
+    <p>Garment Washing</p>
+    <p>Shoe Cleaning</p>
+    <p>Eco-Friendly Cleaning</p>
+    <p>Pickup &amp; Delivery</p>
+    <p>Price: <span class="price">Quote Required</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="Laundry Daddy">
+    <h3>Laundry Daddy</h3>
+    <p class="tag">Listed Provider</p>
+    <p>Rating: <span class="rating">4.5</span> / 5</p>
+    <p>Laundry Services</p>
+    <p>Area: Kandivali West, Mumbai</p>
+    <p>Clothes Washing</p>
+    <p>Ironing</p>
+    <p>Dry Cleaning</p>
+    <p>Pickup &amp; Delivery</p>
+    <p>Price: <span class="price">Quote Required</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="Washiteria Laundry">
+    <h3>Washiteria Laundry</h3>
+    <p class="tag">Listed Provider</p>
+    <p>Rating: <span class="rating">4.5</span> / 5</p>
+    <p>Laundry Washing</p>
+    <p>Area: Kandivali East, Mumbai</p>
+    <p>Wash &amp; Fold</p>
+    <p>Ironing</p>
+    <p>Dry Cleaning</p>
+    <p>Pickup &amp; Delivery</p>
+    <p>Price: <span class="price">Quote Required</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="German Laundry">
+    <h3>German Laundry</h3>
+    <p class="tag">Listed Provider</p>
+    <p>Rating: <span class="rating">4.6</span> / 5</p>
+    <p>Laundry Services</p>
+    <p>Area: Prabhadevi, Mumbai</p>
+    <p>Dry Cleaning</p>
+    <p>Steam Ironing</p>
+    <p>Formal Wear Care</p>
+    <p>Garment Cleaning</p>
+    <p>Price: <span class="price">Quote Required</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="FabriCare">
+    <h3>FabriCare</h3>
+    <p class="tag">Listed Provider</p>
+    <p>Rating: <span class="rating">4.8</span> / 5</p>
+    <p>Professional Laundry</p>
+    <p>Area: Vile Parle East, Mumbai</p>
+    <p>Wet Wash</p>
+    <p>Dry Cleaning</p>
+    <p>Steam Press</p>
+    <p>Shoe Laundry</p>
+    <p>Free Pickup &amp; Delivery</p>
+    <p>Price: <span class="price">Quote Required</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+
+    </div>
+
+    <p class="back"><a href="servicemum.html">Back to Services</a></p>
+</main>
+
+<footer>
+    <p>&copy; 2026 QuickService. All rights reserved.</p>
+    <p><a href="more.html">About Us</a> | <a href="copyright.html">Copyright Policy</a></p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

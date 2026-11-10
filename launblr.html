@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickService - Laundry Services Bengaluru</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1><a href="op.html">QuickService</a></h1>
+    <p>All home services at one stop</p>
+</header>
+
+<main>
+    <h2>Laundry Services in Bengaluru</h2>
+    <p class="muted">Location: Bengaluru, Karnataka | 10 providers listed</p>
+
+    <div class="grid">
+
+<div class="card" data-name="UClean">
+    <h3>UClean</h3>
+    <p class="tag">Listed Provider</p>
+    <p>Laundry &amp; Dry Cleaning</p>
+    <p>Area: Bengaluru</p>
+    <p>Wash &amp; Fold</p>
+    <p>Dry Cleaning</p>
+    <p>Pickup &amp; Delivery</p>
+    <p>Price: <span class="price">Quote Required</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="Washmart">
+    <h3>Washmart</h3>
+    <p class="tag">Listed Provider</p>
+    <p>Laundry Services</p>
+    <p>Area: Bengaluru</p>
+    <p>Clothes Washing</p>
+    <p>Dry Cleaning</p>
+    <p>Doorstep Pickup &amp; Delivery</p>
+    <p>Price: <span class="price">Quote Required</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="PickMyLaundry">
+    <h3>PickMyLaundry</h3>
+    <p class="tag">Listed Provider</p>
+    <p>Online Laundry Service</p>
+    <p>Area: Bengaluru</p>
+    <p>Laundry &amp; Wash</p>
+    <p>Dry Cleaning</p>
+    <p>Pickup &amp; Delivery</p>
+    <p>Price: <span class="price">Quote Required</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="Fresh &amp; Folds">
+    <h3>Fresh &amp; Folds</h3>
+    <p class="tag">Listed Provider</p>
+    <p>Laundry &amp; Garment Care</p>
+    <p>Area: Bengaluru</p>
+    <p>Wash &amp; Fold</p>
+    <p>Dry Cleaning</p>
+    <p>Garment Care</p>
+    <p>Price: <span class="price">Quote Required</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="Laundryheap">
+    <h3>Laundryheap</h3>
+    <p class="tag">Listed Provider</p>
+    <p>Laundry &amp; Dry Cleaning</p>
+    <p>Area: Bengaluru</p>
+    <p>Clothes Cleaning</p>
+    <p>Dry Cleaning</p>
+    <p>Collection &amp; Delivery</p>
+    <p>Price: <span class="price">Quote Required</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="Washho">
+    <h3>Washho</h3>
+    <p class="tag">Listed Provider</p>
+    <p>Laundry Services</p>
+    <p>Area: Bengaluru</p>
+    <p>Clothes Washing</p>
+    <p>Steam Ironing</p>
+    <p>Home Pickup &amp; Delivery</p>
+    <p>Price: <span class="price">Quote Required</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="DhobiLite">
+    <h3>DhobiLite</h3>
+    <p class="tag">Listed Provider</p>
+    <p>Laundry &amp; Dry Cleaning</p>
+    <p>Area: Bengaluru</p>
+    <p>Wash &amp; Fold</p>
+    <p>Dry Cleaning</p>
+    <p>Doorstep Service</p>
+    <p>Price: <span class="price">Quote Required</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="Clean India Laundry">
+    <h3>Clean India Laundry</h3>
+    <p class="tag">Listed Provider</p>
+    <p>Laundry &amp; Cleaning</p>
+    <p>Area: Bengaluru</p>
+    <p>Clothes Washing</p>
+    <p>Dry Cleaning</p>
+    <p>Ironing Services</p>
+    <p>Price: <span class="price">Quote Required</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="Wash &amp; Wear">
+    <h3>Wash &amp; Wear</h3>
+    <p class="tag">Listed Provider</p>
+    <p>Laundry Services</p>
+    <p>Area: Bengaluru</p>
+    <p>Wash &amp; Fold</p>
+    <p>Stain Treatment</p>
+    <p>Pickup &amp; Delivery</p>
+    <p>Price: <span class="price">Quote Required</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+<div class="card" data-name="Super Laundry">
+    <h3>Super Laundry</h3>
+    <p class="tag">Listed Provider</p>
+    <p>Professional Laundry</p>
+    <p>Area: Bengaluru</p>
+    <p>Clothes Cleaning</p>
+    <p>Dry Cleaning</p>
+    <p>Fabric Care</p>
+    <p>Price: <span class="price">Quote Required</span></p>
+    <div class="actions">
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">Call</button>
+        <button class="button outline" type="button" onclick="contactUnavailable(this)">WhatsApp</button>
+        <button onclick="book(this)">Book Now</button>
+    </div>
+    <div class="booking">
+        <p>Share your location with this provider so they can find you.</p>
+        <button onclick="getLocation(this)">Get My Location</button>
+        <p class="loc"></p>
+        <div class="loc-actions"></div>
+    </div>
+</div>
+
+    </div>
+
+    <p class="back"><a href="serviceblr.html">Back to Services</a></p>
+</main>
+
+<footer>
+    <p>&copy; 2026 QuickService. All rights reserved.</p>
+    <p><a href="more.html">About Us</a> | <a href="copyright.html">Copyright Policy</a></p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
